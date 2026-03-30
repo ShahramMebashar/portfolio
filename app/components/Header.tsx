@@ -1,71 +1,77 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
+import type { Locale } from "@/lib/types";
+import type { Dictionary } from "@/lib/i18n";
 
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+interface HeaderProps {
+  locale: Locale;
+  dict: Dictionary;
+}
+
+export default function Header({ locale, dict }: HeaderProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add("menu-open");
-    } else {
-      document.body.classList.remove("menu-open");
-    }
-    return () => document.body.classList.remove("menu-open");
-  }, [isOpen]);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+  const navItems = [
+    { href: `/${locale}`, label: dict.nav.home },
+    { href: `/${locale}/projects`, label: dict.nav.projects },
+    { href: "/ku/blog", label: dict.nav.blog },
+    { href: `/${locale}/about`, label: dict.nav.about },
+    { href: `/${locale}/experience`, label: dict.nav.experience },
+  ];
 
   return (
-    <>
-      <header className={`header animate-fade ${isOpen ? "menu-active" : ""}`}>
-        <Link href="/" className="brand" onClick={closeMenu}>
-          <span style={{ color: "var(--accent)" }}>&lt;</span>Shaho <span style={{ color: "var(--accent)" }}>/&gt;</span>
-        </Link>
-        
-        {/* Desktop Nav */}
-        <nav className="nav desktop-nav">
-          <Link href="/#expertise">_Expertise</Link>
-          <Link href="/#work">_Work</Link>
-          <Link href="/#writing">_Writing</Link>
-          <a href="mailto:hello@shaho.dev">_Contact</a>
-        </nav>
-
-        {/* Mobile Toggle Button */}
-        <button 
-          className="mobile-toggle" 
-          onClick={toggleMenu}
-          aria-label="Toggle navigation menu"
+    <header className="header">
+      <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
+        <a
+          href={`/${locale}`}
+          style={{ fontFamily: "var(--font-geist-mono)", fontWeight: 600, color: "var(--accent)", textDecoration: "none" }}
         >
-          <span className="mono" style={{ color: "var(--accent)" }}>[</span>
-          <span className="mono toggle-text">{isOpen ? " Close " : " Menu "}</span>
-          <span className="mono" style={{ color: "var(--accent)" }}>]</span>
-        </button>
-      </header>
+          shaho<span style={{ color: "var(--text-muted)" }}>.dev</span>
+        </a>
 
-      {/* Mobile Fullscreen Animated Menu */}
-      <div className={`mobile-overlay ${isOpen ? "open" : ""}`}>
-        <div className="mobile-overlay-bg"></div>
-        <nav className="mobile-nav">
-          <Link href="/#expertise" onClick={closeMenu} style={{ '--i': 1 } as React.CSSProperties}>_Expertise</Link>
-          <Link href="/#work" onClick={closeMenu} style={{ '--i': 2 } as React.CSSProperties}>_Work</Link>
-          <Link href="/#writing" onClick={closeMenu} style={{ '--i': 3 } as React.CSSProperties}>_Writing</Link>
-          <a href="mailto:hello@shaho.dev" onClick={closeMenu} style={{ '--i': 4 } as React.CSSProperties}>_Contact</a>
-        </nav>
-      </div>
-    </>
+        <div className="desktop-nav" style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              style={{
+                textDecoration: "none",
+                color: pathname === item.href ? "var(--text)" : "var(--text-muted)",
+                fontSize: "0.9rem",
+              }}
+            >
+              {item.label}
+            </a>
+          ))}
+          <LanguageSwitcher locale={locale} />
+        </div>
+
+        <button
+          className="mobile-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span>{menuOpen ? "Close" : "Menu"}</span>
+        </button>
+      </nav>
+
+      {menuOpen && (
+        <div className="mobile-overlay open" onClick={() => setMenuOpen(false)}>
+          <div className="mobile-overlay-bg" />
+          <nav className="mobile-nav">
+            {navItems.map((item, i) => (
+              <a key={item.href} href={item.href} style={{ "--i": i } as React.CSSProperties} onClick={() => setMenuOpen(false)}>
+                {item.label}
+              </a>
+            ))}
+            <LanguageSwitcher locale={locale} />
+          </nav>
+        </div>
+      )}
+    </header>
   );
 }
