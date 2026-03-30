@@ -1,0 +1,35 @@
+---
+title: مۆدێلەکانی هاوکاتی لە Go
+date: "2026-03-15"
+tags:
+  - concurrency
+  - goroutines
+  - channels
+excerpt: تێڕوانینێکی قووڵ لە مۆدێلەکانی هاوکاتی لە زمانی Go
+readingTime: 8
+---
+
+## پێشەکی
+
+Go زمانێکە کە بۆ هاوکاتی دروستکراوە. لەم بابەتەدا، سەیری مۆدێلە جیاوازەکانی هاوکاتی دەکەین.
+
+## Goroutines
+
+```go
+func main() {
+    go func() {
+        fmt.Println("Hello from goroutine")
+    }()
+    time.Sleep(time.Second)
+}
+```
+
+## Channels
+
+```go
+ch := make(chan int, 10)
+go func() {
+    ch <- 42
+}()
+value := <-ch
+```

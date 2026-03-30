@@ -1,0 +1,39 @@
+---
+title: بەڕێوەبردنی دۆخ لە ئاستی گەورەدا
+date: "2026-03-20"
+tags:
+  - react
+  - state-management
+  - architecture
+excerpt: چۆن دۆخی ئەپڵیکەیشنی گەورە بەڕێوە ببەیت بەبێ ئاڵۆزی
+readingTime: 12
+---
+
+## پێشەکی
+
+بەڕێوەبردنی دۆخ یەکێکە لە گرنگترین بابەتەکانی گەشەپێدانی ئەپڵیکەیشنی React.
+
+## Context API
+
+```tsx
+const ThemeContext = createContext<Theme>('light')
+
+function App() {
+  return (
+    <ThemeContext value="dark">
+      <Dashboard />
+    </ThemeContext>
+  )
+}
+```
+
+## Zustand
+
+```tsx
+import { create } from 'zustand'
+
+const useStore = create((set) => ({
+  count: 0,
+  increment: () => set((state) => ({ count: state.count + 1 })),
+}))
+```

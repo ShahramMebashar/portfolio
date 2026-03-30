@@ -1,0 +1,23 @@
+[
+  {
+    "company": "Company Name",
+    "role": "Senior Full Stack Developer",
+    "period": "2024 — Present",
+    "tech": ["Go", "React", "PostgreSQL", "Docker"],
+    "achievements": [
+      "Architected microservices handling 50k RPM",
+      "Led team of 4 developers",
+      "Reduced API latency by 60%"
+    ]
+  },
+  {
+    "company": "Previous Company",
+    "role": "Full Stack Developer",
+    "period": "2022 — 2024",
+    "tech": ["Laravel", "Vue.js", "MySQL", "Redis"],
+    "achievements": [
+      "Built e-commerce platform processing $2M/month",
+      "Implemented real-time inventory system"
+    ]
+  }
+]
