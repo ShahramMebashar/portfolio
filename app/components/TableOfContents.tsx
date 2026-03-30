@@ -20,12 +20,14 @@ export default function TableOfContents() {
   if (headings.length === 0) return null;
 
   return (
-    <nav style={{ fontSize: "0.85rem", lineHeight: 1.8 }}>
-      <h4 style={{ fontFamily: "var(--font-geist-mono)", fontSize: "0.75rem", color: "var(--text-muted)", marginBottom: "0.5rem" }}>
-        ناوەڕۆک
-      </h4>
+    <nav className="text-sm leading-relaxed">
+      <h4 className="font-mono text-xs text-muted-foreground mb-2">ناوەڕۆک</h4>
       {headings.map((h) => (
-        <a key={h.id} href={`#${h.id}`} style={{ display: "block", paddingInlineStart: h.level === 3 ? "1rem" : "0", color: "var(--text-muted)", textDecoration: "none" }}>
+        <a
+          key={h.id}
+          href={`#${h.id}`}
+          className={`block text-muted-foreground no-underline hover:text-foreground transition-colors ${h.level === 3 ? "ps-4" : ""}`}
+        >
           {h.text}
         </a>
       ))}

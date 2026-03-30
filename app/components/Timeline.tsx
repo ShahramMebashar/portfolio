@@ -1,3 +1,5 @@
+import { Badge } from "@/components/ui/badge";
+
 interface TimelineEntry {
   company: string;
   role: string;
@@ -10,20 +12,20 @@ interface TimelineProps { entries: TimelineEntry[]; }
 
 export default function Timeline({ entries }: TimelineProps) {
   return (
-    <div style={{ position: "relative", paddingInlineStart: "2rem" }}>
-      <div style={{ position: "absolute", insetInlineStart: "0", top: "0", bottom: "0", width: "2px", background: "var(--line)" }} />
+    <div className="relative ps-8">
+      <div className="absolute start-0 top-0 bottom-0 w-0.5 bg-border" />
       {entries.map((entry, i) => (
-        <div key={i} style={{ position: "relative", marginBottom: "2.5rem" }}>
-          <div style={{ position: "absolute", insetInlineStart: "-2rem", top: "0.35rem", width: "10px", height: "10px", borderRadius: "50%", background: i === 0 ? "var(--accent)" : "var(--line)", transform: "translateX(-50%)", marginInlineStart: "1px" }} />
-          <div style={{ fontFamily: "var(--font-geist-mono)", fontSize: "0.75rem", color: "var(--text-muted)", marginBottom: "0.25rem" }}>{entry.period}</div>
-          <h3 style={{ margin: "0 0 0.25rem", fontSize: "1.1rem" }}>{entry.role}</h3>
-          <div style={{ color: "var(--accent)", fontSize: "0.9rem", marginBottom: "0.75rem" }}>{entry.company}</div>
-          <ul style={{ margin: "0 0 0.75rem", paddingInlineStart: "1.25rem", fontSize: "0.9rem", color: "var(--text-muted)", lineHeight: 1.6 }}>
-            {entry.achievements.map((a, j) => (<li key={j}>{a}</li>))}
+        <div key={i} className="relative mb-10">
+          <div className={`absolute -start-8 top-1.5 size-2.5 rounded-full -translate-x-1/2 ms-px ${i === 0 ? "bg-primary" : "bg-border"}`} />
+          <div className="font-mono text-xs text-muted-foreground mb-1">{entry.period}</div>
+          <h3 className="text-lg font-medium mb-0.5">{entry.role}</h3>
+          <div className="text-primary text-sm mb-3">{entry.company}</div>
+          <ul className="mb-3 ps-5 text-sm text-muted-foreground leading-relaxed">
+            {entry.achievements.map((a, j) => (<li key={j} className="mb-1">{a}</li>))}
           </ul>
-          <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
+          <div className="flex gap-1.5 flex-wrap">
             {entry.tech.map((t) => (
-              <span key={t} style={{ fontFamily: "var(--font-geist-mono)", fontSize: "0.7rem", color: "var(--text-muted)", border: "1px solid var(--line)", padding: "0.1rem 0.4rem", borderRadius: "3px" }}>{t}</span>
+              <Badge key={t} variant="outline" className="font-mono text-xs">{t}</Badge>
             ))}
           </div>
         </div>
