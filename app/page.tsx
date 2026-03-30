@@ -1,65 +1,100 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      <div className="dot-grid"></div>
+      <section className="hero">
+        <h1 className="hero-title">
+          <span className="line animate-reveal delay-1">Full Stack</span>
+          <span className="line indent animate-reveal delay-2">Engineering</span>
+          <span className="line animate-reveal delay-3">& Design</span>
+        </h1>
+        <div className="hero-bottom animate-fade delay-4">
+          <p className="hero-subtitle">
+            I develop robust software architectures and craft elegant digital experiences. Specialized in PHP Laravel, Golang, React, and Vue.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section id="expertise" className="section">
+        <div className="section-label">{'//'} 01. EXPERTISE</div>
+        <div className="expertise-grid">
+          <div className="expertise-block">
+            <h3>Frontend Architecture</h3>
+            <p>Designing performant, accessible, and sophisticated user interfaces utilizing React, Next.js, and modern Vanilla JS with seamless micro-animations.</p>
+          </div>
+          <div className="expertise-block">
+            <h3>Backend Systems</h3>
+            <p>Engineering extremely scalable, high-concurrency microservices and APIs leveraging Golang and PHP Laravel for demanding environments.</p>
+          </div>
+          <div className="expertise-block">
+            <h3>Data & DevOps</h3>
+            <p>Structuring robust schemas and complex data pipelines with PostgreSQL, MySQL, and Redis, optimized for high throughput.</p>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section id="work" className="section">
+        <div className="section-label">{'//'} 02. SELECTED WORK</div>
+        <div className="list-wrapper">
+          <Link href="/work/aman-booking" className="list-item">
+            <h3 className="list-item-title">Aman Booking Platform</h3>
+            <div className="list-item-meta">
+              <span>[ Next.js, Laravel ]</span>
+              ( 2025 )
+            </div>
+          </Link>
+          <Link href="/work/real-time-analytics" className="list-item">
+            <h3 className="list-item-title">Real-time Analytics Engine</h3>
+            <div className="list-item-meta">
+              <span>[ Golang, Vue ]</span>
+              ( 2025 )
+            </div>
+          </Link>
+          <Link href="/work/fintech-architecture" className="list-item">
+            <h3 className="list-item-title">Fintech Architecture</h3>
+            <div className="list-item-meta">
+              <span>[ React, Typescript ]</span>
+              ( 2024 )
+            </div>
+          </Link>
+          <Link href="/work/saas-ecommerce" className="list-item">
+            <h3 className="list-item-title">SaaS E-commerce</h3>
+            <div className="list-item-meta">
+              <span>[ PHP, Vue, Redis ]</span>
+              ( 2023 )
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      <section id="writing" className="section">
+        <div className="section-label">{'//'} 03. WRITING</div>
+        <div className="list-wrapper">
+          <Link href="/blog/concurrency-in-golang" className="list-item">
+            <h3 className="list-item-title" style={{ fontSize: "clamp(1.5rem, 3vw, 4rem)" }}>Concurrency Models in Golang</h3>
+            <div className="list-item-meta">
+              <span>[ Engineering ]</span>
+              ( Mar '26 )
+            </div>
+          </Link>
+          <Link href="/blog/state-management-scale" className="list-item">
+            <h3 className="list-item-title" style={{ fontSize: "clamp(1.5rem, 3vw, 4rem)" }}>State Management at Scale</h3>
+            <div className="list-item-meta">
+              <span>[ Architecture ]</span>
+              ( Feb '26 )
+            </div>
+          </Link>
+          <Link href="/blog/laravel-ioc" className="list-item">
+            <h3 className="list-item-title" style={{ fontSize: "clamp(1.5rem, 3vw, 4rem)" }}>Deconstructing Laravel's IoC</h3>
+            <div className="list-item-meta">
+              <span>[ Deep Dive ]</span>
+              ( Jan '26 )
+            </div>
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
