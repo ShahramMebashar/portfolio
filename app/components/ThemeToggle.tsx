@@ -9,7 +9,9 @@ export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   if (!mounted) return <Button variant="ghost" size="icon-sm" aria-label="Toggle theme"><Monitor className="size-4" /></Button>;
 
   const next = theme === "light" ? "dark" : theme === "dark" ? "system" : "light";

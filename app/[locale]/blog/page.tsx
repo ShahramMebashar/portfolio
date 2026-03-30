@@ -3,8 +3,6 @@ import { isLocale } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
 import { getAllPosts, getAllTopics } from "@/lib/content";
 import BlogCard from "@/app/components/BlogCard";
-import { Button } from "@/components/ui/button";
-
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale) || locale !== "ku") notFound();
@@ -19,11 +17,11 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
         <h1>{dict.blog.title}</h1>
       </section>
       <div className="flex gap-3 mb-8 flex-wrap">
-        <Button size="sm" className="font-mono">{dict.blog.all_posts}</Button>
+        <span className="inline-flex items-center px-3 py-1.5 bg-primary text-primary-foreground rounded-lg font-mono text-sm">{dict.blog.all_posts}</span>
         {topics.map((topic) => (
-          <Button key={topic} variant="outline" size="sm" className="font-mono" asChild>
-            <a href={`/ku/blog/${topic}`}>{topic}</a>
-          </Button>
+          <a key={topic} href={`/ku/blog/${topic}`} className="inline-flex items-center px-3 py-1.5 border border-border rounded-lg font-mono text-sm text-muted-foreground no-underline hover:bg-muted transition-colors">
+            {topic}
+          </a>
         ))}
       </div>
       <div className="list-wrapper">

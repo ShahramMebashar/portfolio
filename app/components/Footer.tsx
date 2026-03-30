@@ -1,8 +1,6 @@
-import type { Locale } from "@/lib/types";
-import type { Dictionary } from "@/lib/i18n";
 import { Separator } from "@/components/ui/separator";
 
-export default function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+export default function Footer() {
   return (
     <footer className="layout">
       <Separator />

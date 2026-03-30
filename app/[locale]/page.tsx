@@ -5,7 +5,6 @@ import { getDictionary } from "@/lib/i18n";
 import { getAllPosts, getAllProjects } from "@/lib/content";
 import ProjectCard from "@/app/components/ProjectCard";
 import BlogCard from "@/app/components/BlogCard";
-import { Button } from "@/components/ui/button";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -83,9 +82,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
       <section className="text-center py-16 animate-reveal delay-4">
         <h2>{dict.home.get_in_touch}</h2>
-        <Button asChild className="mt-4 font-mono">
-          <a href="mailto:hello@shaho.dev">hello@shaho.dev</a>
-        </Button>
+        <a href="mailto:hello@shaho.dev" className="inline-block mt-4 px-8 py-3 bg-primary text-primary-foreground rounded-lg no-underline font-mono text-sm">
+          hello@shaho.dev
+        </a>
       </section>
     </div>
   );

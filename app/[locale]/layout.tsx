@@ -2,7 +2,6 @@ import { Geist, Geist_Mono, Noto_Sans_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
 import { isLocale } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
-import type { Locale } from "@/lib/types";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import { ThemeProvider } from "@/app/components/ThemeProvider";
@@ -48,7 +47,7 @@ export default async function LocaleLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header locale={locale} dict={dict} />
           <main>{children}</main>
-          <Footer locale={locale} dict={dict} />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

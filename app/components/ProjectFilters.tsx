@@ -9,7 +9,7 @@ interface ProjectFiltersProps {
   labels: { all: string; fullstack: string; backend: string; frontend: string };
 }
 
-export default function ProjectFilters({ categories, techTags, labels }: ProjectFiltersProps) {
+export default function ProjectFilters({ categories, labels }: ProjectFiltersProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
