@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 interface ProjectFiltersProps {
   categories: string[];
@@ -23,11 +24,17 @@ export default function ProjectFilters({ categories, techTags, labels }: Project
   const categoryLabels: Record<string, string> = { all: labels.all, fullstack: labels.fullstack, backend: labels.backend, frontend: labels.frontend };
 
   return (
-    <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "2rem" }}>
+    <div className="flex gap-2 flex-wrap mb-8">
       {["all", ...categories].map((cat) => (
-        <button key={cat} onClick={() => setFilter("category", cat)} style={{ fontFamily: "var(--font-geist-mono)", fontSize: "0.8rem", padding: "0.3rem 0.75rem", borderRadius: "4px", border: activeCategory === cat ? "none" : "1px solid var(--line)", background: activeCategory === cat ? "var(--accent)" : "transparent", color: activeCategory === cat ? "white" : "var(--text-muted)", cursor: "pointer" }}>
+        <Button
+          key={cat}
+          variant={activeCategory === cat ? "default" : "outline"}
+          size="sm"
+          className="font-mono"
+          onClick={() => setFilter("category", cat)}
+        >
           {categoryLabels[cat] ?? cat}
-        </button>
+        </Button>
       ))}
     </div>
   );
