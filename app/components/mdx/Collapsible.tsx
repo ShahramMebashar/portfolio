@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { Collapsible as ShadcnCollapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible";
+import { ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface CollapsibleProps {
   title: string;
@@ -11,27 +14,14 @@ export function Collapsible({ title, children }: CollapsibleProps) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div style={{ margin: "1.5rem 0", border: "1px solid var(--line)", borderRadius: "8px", overflow: "hidden" }}>
-      <button
-        onClick={() => setOpen(!open)}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "0.5rem",
-          width: "100%",
-          padding: "0.75rem 1rem",
-          background: "var(--bg)",
-          border: "none",
-          cursor: "pointer",
-          fontSize: "0.9rem",
-          color: "var(--text)",
-          textAlign: "start",
-        }}
-      >
-        <span style={{ transition: "transform 0.2s", transform: open ? "rotate(90deg)" : "rotate(0deg)" }}>▶</span>
+    <ShadcnCollapsible open={open} onOpenChange={setOpen} className="my-6 border border-border rounded-lg overflow-hidden">
+      <CollapsibleTrigger className="flex items-center gap-2 w-full p-3 bg-muted/50 text-sm text-foreground cursor-pointer text-start">
+        <ChevronRight className={cn("size-4 transition-transform", open && "rotate-90")} />
         {title}
-      </button>
-      {open && <div style={{ padding: "0 1rem 1rem" }}>{children}</div>}
-    </div>
+      </CollapsibleTrigger>
+      <CollapsibleContent className="px-4 pb-4 pt-2">
+        {children}
+      </CollapsibleContent>
+    </ShadcnCollapsible>
   );
 }

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Copy, Check } from "lucide-react";
 
 interface CodeBlockProps {
   children: React.ReactNode;
@@ -21,39 +23,21 @@ export function CodeBlock({ children, title }: CodeBlockProps) {
   };
 
   return (
-    <div style={{ position: "relative", margin: "1.5rem 0" }}>
+    <div className="relative my-6">
       {title && (
-        <div
-          style={{
-            fontFamily: "var(--font-geist-mono)",
-            fontSize: "0.75rem",
-            color: "var(--text-muted)",
-            padding: "0.5rem 1rem",
-            borderBottom: "1px solid var(--line)",
-            background: "var(--bg)",
-          }}
-        >
+        <div className="font-mono text-xs text-muted-foreground px-4 py-2 border-b border-border bg-muted/50">
           {title}
         </div>
       )}
-      <button
+      <Button
+        variant="ghost"
+        size="icon-xs"
         onClick={handleCopy}
-        style={{
-          position: "absolute",
-          insetInlineEnd: "0.75rem",
-          top: title ? "2.75rem" : "0.75rem",
-          fontFamily: "var(--font-geist-mono)",
-          fontSize: "0.7rem",
-          color: "var(--text-muted)",
-          background: "transparent",
-          border: "1px solid var(--line)",
-          borderRadius: "4px",
-          padding: "0.25rem 0.5rem",
-          cursor: "pointer",
-        }}
+        className="absolute end-3 top-3 text-muted-foreground"
+        aria-label="Copy code"
       >
-        {copied ? "Copied" : "Copy"}
-      </button>
+        {copied ? <Check className="size-3" /> : <Copy className="size-3" />}
+      </Button>
       {children}
     </div>
   );

@@ -3,27 +3,13 @@ import React from "react";
 export function Steps({ children }: { children: React.ReactNode }) {
   const steps = React.Children.toArray(children);
   return (
-    <div style={{ margin: "1.5rem 0" }}>
+    <div className="my-6">
       {steps.map((child, i) => (
-        <div key={i} style={{ display: "flex", gap: "1rem", marginBottom: "1rem", alignItems: "flex-start" }}>
-          <span
-            style={{
-              width: "28px",
-              height: "28px",
-              borderRadius: "50%",
-              background: "var(--accent)",
-              color: "white",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "0.8rem",
-              fontWeight: 600,
-              flexShrink: 0,
-            }}
-          >
+        <div key={i} className="flex gap-4 mb-4 items-start">
+          <span className="size-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-semibold shrink-0">
             {i + 1}
           </span>
-          <div style={{ paddingTop: "3px" }}>{child}</div>
+          <div className="pt-0.5">{child}</div>
         </div>
       ))}
     </div>

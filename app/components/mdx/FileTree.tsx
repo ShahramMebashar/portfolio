@@ -4,19 +4,7 @@ interface FileTreeProps {
 
 export function FileTree({ children }: FileTreeProps) {
   return (
-    <div
-      style={{
-        fontFamily: "var(--font-geist-mono)",
-        fontSize: "0.85rem",
-        lineHeight: 1.8,
-        padding: "1rem 1.25rem",
-        margin: "1.5rem 0",
-        border: "1px solid var(--line)",
-        borderRadius: "8px",
-        direction: "ltr",
-        textAlign: "left",
-      }}
-    >
+    <div className="font-mono text-sm leading-relaxed p-4 my-6 border border-border rounded-lg" dir="ltr" style={{ textAlign: "left" }}>
       {children}
     </div>
   );
