@@ -18,7 +18,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   return {
-    title: locale === "ku" ? "شەهرام | گەشەپێدەری فوڵ ستاک" : "Shahram M. Hassan | Full Stack Developer",
+    title: locale === "ku" ? "شاهۆ | گەشەپێدەری فوڵ ستاک" : "Shaho | Full Stack Developer",
     description: locale === "ku"
       ? "گەشەپێدەری فوڵ ستاک - Go، Laravel، React"
       : "Full Stack Developer - Go, Laravel, React & TypeScript",
