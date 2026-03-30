@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
 import { ViewTransitionLink } from "@/app/components/ViewTransitionLink";
 import Image from "next/image";
+import CodeWidget from "@/app/components/CodeWidget";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -92,49 +93,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               {/* Background gradient orb */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-full blur-[80px] opacity-60"></div>
 
-              {/* Window 1 - Fun Code: Coffee-Driven Development */}
-              <div dir="ltr" className="absolute left-[-2%] top-[10%] w-[400px] bg-[#0d0d0d] backdrop-blur-3xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_24px_48px_rgba(0,0,0,0.3)] transform -rotate-3 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 z-20 ease-out group">
-                {/* Header */}
-                <div className="flex items-center px-4 py-3 border-b border-white/5 bg-white/5 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="flex gap-1.5 mr-5 opacity-70 group-hover:opacity-100 transition-opacity relative z-10">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
-                  </div>
-                  <div className="flex gap-4 relative z-10">
-                    <div className="text-[10px] font-mono text-white/80 tracking-wide border-b border-amber-400/50 pb-1">developer.go</div>
-                    <div className="text-[10px] font-mono text-white/30 tracking-wide pb-1 hover:text-white/60 transition-colors">coffee.log</div>
-                  </div>
-                </div>
-                {/* Code Body — generous spacing */}
-                <div className="px-5 py-4 font-mono text-[11px] md:text-[12px] leading-[1.7] text-white/80 overflow-hidden text-left relative">
-                  <div className="absolute top-[-50px] right-[-50px] w-48 h-48 bg-amber-500/8 blur-[60px] pointer-events-none rounded-full"></div>
-
-                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">1</span><span className="text-[#ff7b72]">package</span> <span className="text-white/90">life</span></div>
-                  <div className="flex gap-2 h-4"><span className="text-white/20 w-6 text-right select-none shrink-0">2</span></div>
-                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">3</span><span className="text-[#ff7b72]">type</span> <span className="text-[#d2a8ff]">Developer</span> <span className="text-[#ff7b72]">struct</span> <span className="text-white">{"{"}</span></div>
-                  <div className="flex gap-2 group-hover:bg-white/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">4</span><span className="pl-4 text-[#a5d6ff]">Name</span> &nbsp;&nbsp;<span className="text-[#ff7b72]">string</span></div>
-                  <div className="flex gap-2 group-hover:bg-white/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">5</span><span className="pl-4 text-[#a5d6ff]">Coffee</span> <span className="text-[#ff7b72]">int</span></div>
-                  <div className="flex gap-2 group-hover:bg-white/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">6</span><span className="pl-4 text-[#a5d6ff]">Skills</span> <span className="text-white">[]</span><span className="text-[#ff7b72]">string</span></div>
-                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">7</span><span className="text-white">{"}"}</span></div>
-                  <div className="flex gap-2 h-4"><span className="text-white/20 w-6 text-right select-none shrink-0">8</span></div>
-                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">9</span><span className="text-[#ff7b72]">func</span> <span className="text-[#d2a8ff]">main</span><span className="text-white">() {"{"}</span></div>
-                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">10</span><span className="pl-4">me</span> <span className="text-[#ff7b72]">:=</span> <span className="text-[#d2a8ff]">Developer</span><span className="text-white">{"{"}</span></div>
-                  <div className="flex gap-2 group-hover:bg-amber-500/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">11</span><span className="pl-8 text-[#a5d6ff]">Name</span><span className="text-[#ff7b72]">:</span> &nbsp;&nbsp;<span className="text-[#a5d6ff]">&quot;Shahram&quot;</span><span className="text-white">,</span></div>
-                  <div className="flex gap-2 group-hover:bg-amber-500/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">12</span><span className="pl-8 text-[#a5d6ff]">Coffee</span><span className="text-[#ff7b72]">:</span> <span className="text-[#79c0ff]">9999</span><span className="text-white">,</span> <span className="text-[#8b949e] italic">// and counting</span></div>
-                  <div className="flex gap-2 group-hover:bg-amber-500/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">13</span><span className="pl-8 text-[#a5d6ff]">Skills</span><span className="text-[#ff7b72]">:</span> <span className="text-white">[]</span><span className="text-[#ff7b72]">string</span><span className="text-white">{"{"}</span></div>
-                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">14</span><span className="pl-12 text-[#a5d6ff]">&quot;Go&quot;</span><span className="text-white">,</span> <span className="text-[#a5d6ff]">&quot;Laravel&quot;</span><span className="text-white">,</span> <span className="text-[#a5d6ff]">&quot;React&quot;</span><span className="text-white">,</span></div>
-                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">15</span><span className="pl-12 text-[#a5d6ff]">&quot;Vue&quot;</span><span className="text-white">,</span> <span className="text-[#a5d6ff]">&quot;Flutter&quot;</span><span className="text-white">,</span> <span className="text-[#a5d6ff]">&quot;JS&quot;</span><span className="text-white">{"}"}</span><span className="text-white">,</span></div>
-                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">16</span><span className="pl-4 text-white">{"}"}</span></div>
-                  <div className="flex gap-2 h-4"><span className="text-white/20 w-6 text-right select-none shrink-0">17</span></div>
-                  <div className="flex gap-2 opacity-80"><span className="text-white/20 w-6 text-right select-none shrink-0">18</span><span className="pl-4 text-[#8b949e] italic">// The secret to shipping fast</span></div>
-                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">19</span><span className="pl-4 text-[#ff7b72]">for</span> <span className="text-white">me.Coffee &gt; </span><span className="text-[#79c0ff]">0</span> <span className="text-white">{"{"}</span></div>
-                  <div className="flex gap-2 group-hover:bg-white/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">20</span><span className="pl-8">me.</span><span className="text-[#d2a8ff]">BuildSomethingAwesome</span><span className="text-white">()</span></div>
-                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">21</span><span className="pl-4 text-white">{"}"}</span></div>
-                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">22</span><span className="text-white">{"}"}</span></div>
-                </div>
-              </div>
+              <CodeWidget />
 
               
             </div>
