@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "about": "About",
+    "experience": "Experience"
+  },
+  "home": {
+    "hero_title": "Full Stack Developer",
+    "hero_subtitle": "Building robust systems with Go, Laravel, React & TypeScript",
+    "expertise": "Expertise",
+    "selected_work": "Selected Work",
+    "latest_posts": "Latest Posts",
+    "view_all_projects": "View All Projects",
+    "view_all_posts": "View All Posts",
+    "get_in_touch": "Get in Touch"
+  },
+  "projects": {
+    "title": "Projects",
+    "filter_all": "All",
+    "filter_fullstack": "Full Stack",
+    "filter_backend": "Backend",
+    "filter_frontend": "Frontend"
+  },
+  "blog": {
+    "title": "Blog",
+    "reading_time": "min read",
+    "all_posts": "All Posts"
+  },
+  "about": {
+    "title": "About"
+  },
+  "experience": {
+    "title": "Experience"
+  },
+  "common": {
+    "back": "Back",
+    "language": "EN"
+  }
+}

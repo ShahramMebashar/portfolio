@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "home": "سەرەتا",
+    "projects": "پڕۆژەکان",
+    "blog": "بلۆگ",
+    "about": "دەربارە",
+    "experience": "ئەزموون"
+  },
+  "home": {
+    "hero_title": "گەشەپێدەری فوڵ ستاک",
+    "hero_subtitle": "دروستکردنی سیستەمی بەهێز بە Go، Laravel، React و TypeScript",
+    "expertise": "شارەزایی",
+    "selected_work": "کارە هەڵبژاردەکان",
+    "latest_posts": "تازەترین بابەتەکان",
+    "view_all_projects": "هەموو پڕۆژەکان ببینە",
+    "view_all_posts": "هەموو بابەتەکان ببینە",
+    "get_in_touch": "پەیوەندیمان پێوە بکە"
+  },
+  "projects": {
+    "title": "پڕۆژەکان",
+    "filter_all": "هەموو",
+    "filter_fullstack": "فوڵ ستاک",
+    "filter_backend": "باکێند",
+    "filter_frontend": "فرۆنتێند"
+  },
+  "blog": {
+    "title": "بلۆگ",
+    "reading_time": "خولەک خوێندنەوە",
+    "all_posts": "هەموو بابەتەکان"
+  },
+  "about": {
+    "title": "دەربارە"
+  },
+  "experience": {
+    "title": "ئەزموون"
+  },
+  "common": {
+    "back": "گەڕانەوە",
+    "language": "کوردی"
+  }
+}
