@@ -12,22 +12,22 @@ export function isTopic(value: string): value is Topic {
   return topics.includes(value as Topic);
 }
 
-export interface BlogFrontmatter {
+export type BlogFrontmatter = {
   title: string;
   date: string;
   tags: string[];
   excerpt: string;
   readingTime: number;
-}
+};
 
-export interface ProjectFrontmatter {
+export type ProjectFrontmatter = {
   title: string;
   date: string;
   tech: string[];
   category: "fullstack" | "backend" | "frontend";
   thumbnail: string;
   featured: boolean;
-}
+};
 
 export interface BlogPost {
   slug: string;
