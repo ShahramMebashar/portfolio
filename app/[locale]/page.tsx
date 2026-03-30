@@ -32,7 +32,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   priority
                 />
               </div>
-              <div className="absolute -bottom-2 -right-2 bg-background border border-border/80 shadow-md rounded-full p-1.5 flex items-center justify-center text-lg z-20 w-8 h-8 md:w-9 md:h-9 hover:rotate-12 transition-transform cursor-default">
+              <div className="absolute -bottom-2 -end-2 bg-background border border-border/80 shadow-md rounded-full p-1.5 flex items-center justify-center text-lg z-20 w-8 h-8 md:w-9 md:h-9 hover:rotate-12 transition-transform cursor-default">
                 👋
               </div>
             </div>
@@ -75,7 +75,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary/50 to-blue-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 <span className="relative flex items-center justify-center">
                   Schedule a meeting
-                  <svg className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  <svg className="ms-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </span>
               </ViewTransitionLink>
               <ViewTransitionLink href={`/${locale}/about`} className="px-7 py-3 rounded-full bg-transparent text-foreground border border-border/80 font-semibold transition-all hover:bg-muted/50 hover:border-foreground/20 text-sm">
@@ -93,7 +93,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-full blur-[80px] opacity-60"></div>
 
               {/* Window 1 - Fun Code: Coffee-Driven Development */}
-              <div className="absolute left-[-2%] top-[10%] w-[400px] bg-[#0d0d0d] backdrop-blur-3xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_24px_48px_rgba(0,0,0,0.3)] transform -rotate-3 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 z-20 ease-out group">
+              <div dir="ltr" className="absolute left-[-2%] top-[10%] w-[400px] bg-[#0d0d0d] backdrop-blur-3xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_24px_48px_rgba(0,0,0,0.3)] transform -rotate-3 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 z-20 ease-out group">
                 {/* Header */}
                 <div className="flex items-center px-4 py-3 border-b border-white/5 bg-white/5 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>

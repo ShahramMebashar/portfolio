@@ -75,7 +75,7 @@ export default function Header({ locale, dict }: HeaderProps) {
               );
             })}
 
-            <div className="flex items-center gap-2 ml-4 pl-4 border-l border-border/50">
+            <div className="flex items-center gap-2 ms-4 ps-4 border-s border-border/50">
               <LanguageSwitcher locale={locale} />
               <ThemeToggle />
             </div>

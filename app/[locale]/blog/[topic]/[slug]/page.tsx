@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
             </ViewTransitionLink>
           ) : <span />}
           {nextPost ? (
-            <ViewTransitionLink href={`/ku/blog/${nextPost.topic}/${nextPost.slug}`} className="flex flex-col gap-1 text-muted-foreground no-underline hover:text-foreground transition-colors max-w-[200px] sm:text-right">
+            <ViewTransitionLink href={`/ku/blog/${nextPost.topic}/${nextPost.slug}`} className="flex flex-col gap-1 text-muted-foreground no-underline hover:text-foreground transition-colors max-w-[200px] sm:text-end">
               <span className="text-xs uppercase tracking-widest text-muted-foreground/60">Next</span>
               <span className="truncate">{nextPost.frontmatter.title}</span>
             </ViewTransitionLink>

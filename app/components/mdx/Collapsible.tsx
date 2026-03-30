@@ -16,7 +16,7 @@ export function Collapsible({ title, children }: CollapsibleProps) {
   return (
     <ShadcnCollapsible open={open} onOpenChange={setOpen} className="my-6 border border-border rounded-lg overflow-hidden">
       <CollapsibleTrigger className="flex items-center gap-2 w-full p-3 bg-muted/50 text-sm text-foreground cursor-pointer text-start">
-        <ChevronRight className={cn("size-4 transition-transform", open && "rotate-90")} />
+        <ChevronRight className={cn("size-4 transition-transform rtl:-scale-x-100", open && "rotate-90")} />
         {title}
       </CollapsibleTrigger>
       <CollapsibleContent className="px-4 pb-4 pt-2">

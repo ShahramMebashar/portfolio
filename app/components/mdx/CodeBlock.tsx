@@ -23,7 +23,7 @@ export function CodeBlock({ children, title }: CodeBlockProps) {
   };
 
   return (
-    <div className="relative my-6">
+    <div dir="ltr" className="relative my-6">
       {title && (
         <div className="font-mono text-xs text-muted-foreground px-4 py-2 border-b border-border bg-muted/50">
           {title}

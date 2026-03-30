@@ -16,7 +16,7 @@ export default function Timeline({ entries }: TimelineProps) {
       <div className="absolute start-0 top-0 bottom-0 w-0.5 bg-border" />
       {entries.map((entry, i) => (
         <div key={i} className="relative mb-10">
-          <div className={`absolute -start-8 top-1.5 size-2.5 rounded-full -translate-x-1/2 ms-px ${i === 0 ? "bg-primary" : "bg-border"}`} />
+          <div className={`absolute -start-[2.05rem] top-1.5 size-2.5 rounded-full ${i === 0 ? "bg-primary" : "bg-border"}`} />
           <div className="font-mono text-xs text-muted-foreground mb-1">{entry.period}</div>
           <h3 className="text-lg font-medium mb-0.5">{entry.role}</h3>
           <div className="text-primary text-sm mb-3">{entry.company}</div>
