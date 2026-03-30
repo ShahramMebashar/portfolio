@@ -5,6 +5,7 @@ import { getDictionary } from "@/lib/i18n";
 import type { Locale } from "@/lib/types";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import { ThemeProvider } from "@/app/components/ThemeProvider";
 import "@/app/globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -42,11 +43,13 @@ export default async function LocaleLayout({
     : `${geistSans.variable} ${geistMono.variable}`;
 
   return (
-    <html lang={locale} dir={dir}>
-      <body className={fontClass} style={{ fontFamily: locale === "ku" ? "var(--font-noto-arabic)" : "var(--font-geist-sans)" }}>
-        <Header locale={locale} dict={dict} />
-        <main>{children}</main>
-        <Footer locale={locale} dict={dict} />
+    <html lang={locale} dir={dir} suppressHydrationWarning>
+      <body className={`${fontClass} ${locale === "ku" ? "font-[var(--font-noto-arabic)]" : ""}`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Header locale={locale} dict={dict} />
+          <main>{children}</main>
+          <Footer locale={locale} dict={dict} />
+        </ThemeProvider>
       </body>
     </html>
   );

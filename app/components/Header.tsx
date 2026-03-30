@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 import type { Locale } from "@/lib/types";
 import type { Dictionary } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 
 interface HeaderProps {
   locale: Locale;
@@ -24,40 +26,35 @@ export default function Header({ locale, dict }: HeaderProps) {
   ];
 
   return (
-    <header className="header">
-      <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
-        <a
-          href={`/${locale}`}
-          style={{ fontFamily: "var(--font-geist-mono)", fontWeight: 600, color: "var(--accent)", textDecoration: "none" }}
-        >
-          shaho<span style={{ color: "var(--text-muted)" }}>.dev</span>
-        </a>
+    <header className="layout flex justify-between items-center pb-[2vw] mb-[15vh]">
+      <a href={`/${locale}`} className="font-mono font-semibold text-primary no-underline">
+        shaho<span className="text-muted-foreground">.dev</span>
+      </a>
 
-        <div className="desktop-nav" style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              style={{
-                textDecoration: "none",
-                color: pathname === item.href ? "var(--text)" : "var(--text-muted)",
-                fontSize: "0.9rem",
-              }}
-            >
-              {item.label}
-            </a>
-          ))}
-          <LanguageSwitcher locale={locale} />
-        </div>
-
-        <button
-          className="mobile-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span>{menuOpen ? "Close" : "Menu"}</span>
-        </button>
+      <nav className="hidden md:flex items-center gap-6">
+        {navItems.map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            className={cn(
+              "text-sm no-underline transition-colors",
+              pathname === item.href ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+            )}
+          >
+            {item.label}
+          </a>
+        ))}
+        <LanguageSwitcher locale={locale} />
+        <ThemeToggle />
       </nav>
+
+      <button
+        className="md:hidden font-mono text-sm uppercase tracking-widest bg-transparent border-none cursor-pointer text-foreground z-[1000]"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+      >
+        {menuOpen ? "Close" : "Menu"}
+      </button>
 
       {menuOpen && (
         <div className="mobile-overlay open" onClick={() => setMenuOpen(false)}>
@@ -68,7 +65,10 @@ export default function Header({ locale, dict }: HeaderProps) {
                 {item.label}
               </a>
             ))}
-            <LanguageSwitcher locale={locale} />
+            <div className="flex justify-center gap-4">
+              <LanguageSwitcher locale={locale} />
+              <ThemeToggle />
+            </div>
           </nav>
         </div>
       )}
