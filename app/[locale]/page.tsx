@@ -5,6 +5,7 @@ import { getDictionary } from "@/lib/i18n";
 import { getAllPosts, getAllProjects } from "@/lib/content";
 import ProjectCard from "@/app/components/ProjectCard";
 import BlogCard from "@/app/components/BlogCard";
+import { Button } from "@/components/ui/button";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -19,63 +20,53 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <div className="layout">
-      {/* Hero */}
-      <section className="hero" style={{ animation: "reveal 0.8s ease forwards" }}>
-        <p style={{ fontFamily: "var(--font-geist-mono)", color: "var(--accent)", fontSize: "0.9rem" }}>
-          Shaho
-        </p>
-        <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", lineHeight: 1.1, margin: "0.5rem 0" }}>
-          {dict.home.hero_title}
-        </h1>
-        <p style={{ color: "var(--text-muted)", fontSize: "1.1rem", maxWidth: "600px" }}>
-          {dict.home.hero_subtitle}
-        </p>
+      <section className="hero animate-reveal">
+        <p className="font-mono text-primary text-sm">Shaho</p>
+        <h1 className="text-[clamp(2rem,5vw,3.5rem)] leading-tight mt-2">{dict.home.hero_title}</h1>
+        <p className="text-muted-foreground text-lg max-w-[600px] mt-2">{dict.home.hero_subtitle}</p>
       </section>
 
-      {/* Expertise */}
-      <section className="section" style={{ animation: "reveal 0.8s ease forwards", animationDelay: "0.1s", opacity: 0 }}>
+      <section className="section animate-reveal delay-1">
         <div>
-          <span style={{ fontFamily: "var(--font-geist-mono)", fontSize: "0.8rem", color: "var(--text-muted)" }}>01</span>
+          <span className="font-mono text-sm text-muted-foreground">01</span>
           <h2>{dict.home.expertise}</h2>
         </div>
         <div className="expertise-grid">
           <div>
-            <h3 style={{ fontFamily: "var(--font-geist-mono)", fontSize: "0.9rem" }}>Frontend</h3>
-            <p style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}>React, Next.js, TypeScript, Vue.js</p>
+            <h3 className="font-mono text-sm">Frontend</h3>
+            <p className="text-muted-foreground text-sm">React, Next.js, TypeScript, Vue.js</p>
           </div>
           <div>
-            <h3 style={{ fontFamily: "var(--font-geist-mono)", fontSize: "0.9rem" }}>Backend</h3>
-            <p style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}>Go, Laravel, Node.js, PostgreSQL</p>
+            <h3 className="font-mono text-sm">Backend</h3>
+            <p className="text-muted-foreground text-sm">Go, Laravel, Node.js, PostgreSQL</p>
           </div>
           <div>
-            <h3 style={{ fontFamily: "var(--font-geist-mono)", fontSize: "0.9rem" }}>Data & DevOps</h3>
-            <p style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}>Redis, Docker, CI/CD, AWS</p>
+            <h3 className="font-mono text-sm">Data & DevOps</h3>
+            <p className="text-muted-foreground text-sm">Redis, Docker, CI/CD, AWS</p>
           </div>
         </div>
       </section>
 
-      {/* Selected Work */}
-      <section className="section" style={{ animation: "reveal 0.8s ease forwards", animationDelay: "0.2s", opacity: 0 }}>
+      <section className="section animate-reveal delay-2">
         <div>
-          <span style={{ fontFamily: "var(--font-geist-mono)", fontSize: "0.8rem", color: "var(--text-muted)" }}>02</span>
+          <span className="font-mono text-sm text-muted-foreground">02</span>
           <h2>{dict.home.selected_work}</h2>
         </div>
         <div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "1.5rem" }}>
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6">
             {featuredProjects.map((project) => (
               <ProjectCard key={project.slug} project={project} locale={locale as Locale} />
             ))}
           </div>
-          <a href={`/${locale}/projects`} style={{ display: "inline-block", marginTop: "1.5rem", color: "var(--accent)", fontSize: "0.9rem" }}>
+          <a href={`/${locale}/projects`} className="inline-block mt-6 text-primary text-sm">
             {dict.home.view_all_projects} →
           </a>
         </div>
       </section>
 
-      {/* Latest Posts */}
-      <section className="section" style={{ animation: "reveal 0.8s ease forwards", animationDelay: "0.3s", opacity: 0 }}>
+      <section className="section animate-reveal delay-3">
         <div>
-          <span style={{ fontFamily: "var(--font-geist-mono)", fontSize: "0.8rem", color: "var(--text-muted)" }}>03</span>
+          <span className="font-mono text-sm text-muted-foreground">03</span>
           <h2>{dict.home.latest_posts}</h2>
         </div>
         <div>
@@ -84,31 +75,17 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <BlogCard key={`${post.topic}/${post.slug}`} post={post} />
             ))}
           </div>
-          <a href="/ku/blog" style={{ display: "inline-block", marginTop: "1.5rem", color: "var(--accent)", fontSize: "0.9rem" }}>
+          <a href="/ku/blog" className="inline-block mt-6 text-primary text-sm">
             {dict.home.view_all_posts} →
           </a>
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ textAlign: "center", padding: "4rem 0", animation: "reveal 0.8s ease forwards", animationDelay: "0.4s", opacity: 0 }}>
+      <section className="text-center py-16 animate-reveal delay-4">
         <h2>{dict.home.get_in_touch}</h2>
-        <a
-          href="mailto:hello@shaho.dev"
-          style={{
-            display: "inline-block",
-            marginTop: "1rem",
-            padding: "0.75rem 2rem",
-            background: "var(--accent)",
-            color: "white",
-            borderRadius: "6px",
-            textDecoration: "none",
-            fontFamily: "var(--font-geist-mono)",
-            fontSize: "0.9rem",
-          }}
-        >
-          hello@shaho.dev
-        </a>
+        <Button asChild className="mt-4 font-mono">
+          <a href="mailto:hello@shaho.dev">hello@shaho.dev</a>
+        </Button>
       </section>
     </div>
   );

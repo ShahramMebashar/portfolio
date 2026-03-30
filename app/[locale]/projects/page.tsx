@@ -25,7 +25,7 @@ export default async function ProjectsPage({ params, searchParams }: { params: P
     <div className="layout">
       <section className="hero"><h1>{dict.projects.title}</h1></section>
       <ProjectFilters categories={categories} techTags={techTags} labels={{ all: dict.projects.filter_all, fullstack: dict.projects.filter_fullstack, backend: dict.projects.filter_backend, frontend: dict.projects.filter_frontend }} />
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1.5rem" }}>
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-6">
         {filtered.map((project) => (<ProjectCard key={project.slug} project={project} locale={locale as Locale} />))}
       </div>
     </div>

@@ -3,6 +3,7 @@ import { isLocale } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
 import { getAllPosts, getAllTopics } from "@/lib/content";
 import BlogCard from "@/app/components/BlogCard";
+import { Button } from "@/components/ui/button";
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -17,14 +18,12 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
       <section className="hero">
         <h1>{dict.blog.title}</h1>
       </section>
-      <div style={{ display: "flex", gap: "0.75rem", marginBottom: "2rem", flexWrap: "wrap" }}>
-        <a href="/ku/blog" style={{ fontFamily: "var(--font-geist-mono)", fontSize: "0.8rem", padding: "0.3rem 0.75rem", borderRadius: "4px", background: "var(--accent)", color: "white", textDecoration: "none" }}>
-          {dict.blog.all_posts}
-        </a>
+      <div className="flex gap-3 mb-8 flex-wrap">
+        <Button size="sm" className="font-mono">{dict.blog.all_posts}</Button>
         {topics.map((topic) => (
-          <a key={topic} href={`/ku/blog/${topic}`} style={{ fontFamily: "var(--font-geist-mono)", fontSize: "0.8rem", padding: "0.3rem 0.75rem", borderRadius: "4px", border: "1px solid var(--line)", color: "var(--text-muted)", textDecoration: "none" }}>
-            {topic}
-          </a>
+          <Button key={topic} variant="outline" size="sm" className="font-mono" asChild>
+            <a href={`/ku/blog/${topic}`}>{topic}</a>
+          </Button>
         ))}
       </div>
       <div className="list-wrapper">

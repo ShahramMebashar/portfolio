@@ -17,13 +17,13 @@ export default async function TopicPage({ params }: { params: Promise<{ locale: 
   return (
     <div className="layout">
       <section className="hero">
-        <h1 style={{ fontFamily: "var(--font-geist-mono)" }}>{topic}</h1>
-        <p style={{ color: "var(--text-muted)" }}>{posts.length} بابەت</p>
+        <h1 className="font-mono">{topic}</h1>
+        <p className="text-muted-foreground">{posts.length} بابەت</p>
       </section>
       <div className="list-wrapper">
         {posts.map((post) => (<BlogCard key={post.slug} post={post} />))}
       </div>
-      <a href="/ku/blog" style={{ color: "var(--accent)", fontSize: "0.9rem" }}>← هەموو بابەتەکان</a>
+      <a href="/ku/blog" className="text-primary text-sm">← هەموو بابەتەکان</a>
     </div>
   );
 }
