@@ -42,9 +42,14 @@ export default async function LocaleLayout({
     : `${geistSans.variable} ${geistMono.variable}`;
 
   return (
-    <html lang={locale} dir={dir} suppressHydrationWarning>
-      <body className={`${fontClass} ${locale === "ku" ? "font-[var(--font-noto-arabic)]" : ""}`} suppressHydrationWarning>
+    <html lang={locale} dir={dir} className={fontClass} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          {/* Architectural Background Lines */}
+          <div className="fixed inset-0 pointer-events-none z-[-1] flex justify-center w-full">
+            <div className="w-full max-w-5xl h-full border-x border-border/40"></div>
+          </div>
+
           <Header locale={locale} dict={dict} />
           <main>{children}</main>
           <Footer />

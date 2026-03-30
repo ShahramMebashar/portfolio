@@ -22,6 +22,7 @@ export type BlogFrontmatter = {
 
 export type ProjectFrontmatter = {
   title: string;
+  description?: string;
   date: string;
   tech: string[];
   category: "fullstack" | "backend" | "frontend";
