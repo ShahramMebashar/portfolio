@@ -40,7 +40,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <h1 className="text-[3.5rem] md:text-[5.5rem] leading-[0.95] tracking-[-0.04em] font-extrabold text-foreground mb-6 transition-all">
               Hello.<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-foreground to-foreground/50">
-                I&apos;m Shaho.
+                I&apos;m Shahram.
               </span>
             </h1>
 
@@ -108,90 +108,34 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   </div>
                 </div>
                 {/* Code Body — generous spacing */}
-                <div className="px-6 py-5 font-mono text-[11.5px] md:text-[12.5px] leading-[2] text-white/80 overflow-hidden text-left relative">
+                <div className="px-5 py-4 font-mono text-[11px] md:text-[12px] leading-[1.7] text-white/80 overflow-hidden text-left relative">
                   <div className="absolute top-[-50px] right-[-50px] w-48 h-48 bg-amber-500/8 blur-[60px] pointer-events-none rounded-full"></div>
 
-                  <div className="flex gap-3"><span className="text-white/20 w-7 text-right select-none shrink-0">1</span><span className="text-[#ff7b72]">package</span> <span className="text-white/90">life</span></div>
-                  <div className="flex gap-3 mt-1"><span className="text-white/20 w-7 text-right select-none shrink-0">2</span></div>
-                  <div className="flex gap-3"><span className="text-white/20 w-7 text-right select-none shrink-0">3</span><span className="text-[#ff7b72]">type</span> <span className="text-[#d2a8ff]">Developer</span> <span className="text-[#ff7b72]">struct</span> <span className="text-white">{"{"}</span></div>
-                  <div className="flex gap-3 group-hover:bg-white/5 transition-colors rounded"><span className="text-white/20 w-7 text-right select-none shrink-0">4</span><span className="pl-6 text-[#a5d6ff]">Name</span>   <span className="text-[#ff7b72]">string</span></div>
-                  <div className="flex gap-3 group-hover:bg-white/5 transition-colors rounded"><span className="text-white/20 w-7 text-right select-none shrink-0">5</span><span className="pl-6 text-[#a5d6ff]">Coffee</span> <span className="text-[#ff7b72]">int</span></div>
-                  <div className="flex gap-3 group-hover:bg-white/5 transition-colors rounded"><span className="text-white/20 w-7 text-right select-none shrink-0">6</span><span className="pl-6 text-[#a5d6ff]">Skills</span> <span className="text-white">[]</span><span className="text-[#ff7b72]">string</span></div>
-                  <div className="flex gap-3"><span className="text-white/20 w-7 text-right select-none shrink-0">7</span><span className="text-white">{"}"}</span></div>
-                  <div className="flex gap-3 mt-1"><span className="text-white/20 w-7 text-right select-none shrink-0">8</span></div>
-                  <div className="flex gap-3"><span className="text-white/20 w-7 text-right select-none shrink-0">9</span><span className="text-[#ff7b72]">func</span> <span className="text-[#d2a8ff]">main</span><span className="text-white">() {"{"}</span></div>
-                  <div className="flex gap-3"><span className="text-white/20 w-7 text-right select-none shrink-0">10</span><span className="pl-6 text-white">me</span> <span className="text-[#ff7b72]">:=</span> <span className="text-[#d2a8ff]">Developer</span><span className="text-white">{"{"}</span></div>
-                  <div className="flex gap-3 group-hover:bg-amber-500/5 transition-colors rounded"><span className="text-white/20 w-7 text-right select-none shrink-0">11</span><span className="pl-10 text-[#a5d6ff]">Name</span><span className="text-[#ff7b72]">:</span>   <span className="text-[#a5d6ff]">&quot;Shaho&quot;</span><span className="text-white">,</span></div>
-                  <div className="flex gap-3 group-hover:bg-amber-500/5 transition-colors rounded"><span className="text-white/20 w-7 text-right select-none shrink-0">12</span><span className="pl-10 text-[#a5d6ff]">Coffee</span><span className="text-[#ff7b72]">:</span> <span className="text-[#79c0ff]">9999</span><span className="text-white">,</span> <span className="text-[#8b949e] italic">// and counting</span></div>
-                  <div className="flex gap-3 group-hover:bg-amber-500/5 transition-colors rounded"><span className="text-white/20 w-7 text-right select-none shrink-0">13</span><span className="pl-10 text-[#a5d6ff]">Skills</span><span className="text-[#ff7b72]">:</span> <span className="text-white">[]</span><span className="text-[#ff7b72]">string</span><span className="text-white">{"{"}</span></div>
-                  <div className="flex gap-3"><span className="text-white/20 w-7 text-right select-none shrink-0">14</span><span className="pl-14 text-[#a5d6ff]">&quot;Go&quot;</span><span className="text-white">,</span> <span className="text-[#a5d6ff]">&quot;Laravel&quot;</span><span className="text-white">,</span> <span className="text-[#a5d6ff]">&quot;React&quot;</span><span className="text-white">,</span></div>
-                  <div className="flex gap-3"><span className="text-white/20 w-7 text-right select-none shrink-0">15</span><span className="pl-14 text-[#a5d6ff]">&quot;Vue&quot;</span><span className="text-white">,</span> <span className="text-[#a5d6ff]">&quot;Flutter&quot;</span><span className="text-white">,</span> <span className="text-[#a5d6ff]">&quot;JS&quot;</span><span className="text-white">{"}"}</span><span className="text-white">,</span></div>
-                  <div className="flex gap-3"><span className="text-white/20 w-7 text-right select-none shrink-0">16</span><span className="pl-6 text-white">{"}"}</span></div>
-                  <div className="flex gap-3 mt-1"><span className="text-white/20 w-7 text-right select-none shrink-0">17</span></div>
-                  <div className="flex gap-3 opacity-80"><span className="text-white/20 w-7 text-right select-none shrink-0">18</span><span className="pl-6 text-[#8b949e] italic">// The secret to shipping fast</span></div>
-                  <div className="flex gap-3"><span className="text-white/20 w-7 text-right select-none shrink-0">19</span><span className="pl-6 text-[#ff7b72]">for</span> <span className="text-white">me.Coffee &gt; </span><span className="text-[#79c0ff]">0</span> <span className="text-white">{"{"}</span></div>
-                  <div className="flex gap-3 group-hover:bg-white/5 transition-colors rounded"><span className="text-white/20 w-7 text-right select-none shrink-0">20</span><span className="pl-10 text-white">me.</span><span className="text-[#d2a8ff]">BuildSomethingAwesome</span><span className="text-white">()</span></div>
-                  <div className="flex gap-3"><span className="text-white/20 w-7 text-right select-none shrink-0">21</span><span className="pl-6 text-white">{"}"}</span></div>
-                  <div className="flex gap-3"><span className="text-white/20 w-7 text-right select-none shrink-0">22</span><span className="text-white">{"}"}</span></div>
+                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">1</span><span className="text-[#ff7b72]">package</span> <span className="text-white/90">life</span></div>
+                  <div className="flex gap-2 h-4"><span className="text-white/20 w-6 text-right select-none shrink-0">2</span></div>
+                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">3</span><span className="text-[#ff7b72]">type</span> <span className="text-[#d2a8ff]">Developer</span> <span className="text-[#ff7b72]">struct</span> <span className="text-white">{"{"}</span></div>
+                  <div className="flex gap-2 group-hover:bg-white/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">4</span><span className="pl-4 text-[#a5d6ff]">Name</span> &nbsp;&nbsp;<span className="text-[#ff7b72]">string</span></div>
+                  <div className="flex gap-2 group-hover:bg-white/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">5</span><span className="pl-4 text-[#a5d6ff]">Coffee</span> <span className="text-[#ff7b72]">int</span></div>
+                  <div className="flex gap-2 group-hover:bg-white/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">6</span><span className="pl-4 text-[#a5d6ff]">Skills</span> <span className="text-white">[]</span><span className="text-[#ff7b72]">string</span></div>
+                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">7</span><span className="text-white">{"}"}</span></div>
+                  <div className="flex gap-2 h-4"><span className="text-white/20 w-6 text-right select-none shrink-0">8</span></div>
+                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">9</span><span className="text-[#ff7b72]">func</span> <span className="text-[#d2a8ff]">main</span><span className="text-white">() {"{"}</span></div>
+                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">10</span><span className="pl-4">me</span> <span className="text-[#ff7b72]">:=</span> <span className="text-[#d2a8ff]">Developer</span><span className="text-white">{"{"}</span></div>
+                  <div className="flex gap-2 group-hover:bg-amber-500/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">11</span><span className="pl-8 text-[#a5d6ff]">Name</span><span className="text-[#ff7b72]">:</span> &nbsp;&nbsp;<span className="text-[#a5d6ff]">&quot;Shahram&quot;</span><span className="text-white">,</span></div>
+                  <div className="flex gap-2 group-hover:bg-amber-500/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">12</span><span className="pl-8 text-[#a5d6ff]">Coffee</span><span className="text-[#ff7b72]">:</span> <span className="text-[#79c0ff]">9999</span><span className="text-white">,</span> <span className="text-[#8b949e] italic">// and counting</span></div>
+                  <div className="flex gap-2 group-hover:bg-amber-500/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">13</span><span className="pl-8 text-[#a5d6ff]">Skills</span><span className="text-[#ff7b72]">:</span> <span className="text-white">[]</span><span className="text-[#ff7b72]">string</span><span className="text-white">{"{"}</span></div>
+                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">14</span><span className="pl-12 text-[#a5d6ff]">&quot;Go&quot;</span><span className="text-white">,</span> <span className="text-[#a5d6ff]">&quot;Laravel&quot;</span><span className="text-white">,</span> <span className="text-[#a5d6ff]">&quot;React&quot;</span><span className="text-white">,</span></div>
+                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">15</span><span className="pl-12 text-[#a5d6ff]">&quot;Vue&quot;</span><span className="text-white">,</span> <span className="text-[#a5d6ff]">&quot;Flutter&quot;</span><span className="text-white">,</span> <span className="text-[#a5d6ff]">&quot;JS&quot;</span><span className="text-white">{"}"}</span><span className="text-white">,</span></div>
+                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">16</span><span className="pl-4 text-white">{"}"}</span></div>
+                  <div className="flex gap-2 h-4"><span className="text-white/20 w-6 text-right select-none shrink-0">17</span></div>
+                  <div className="flex gap-2 opacity-80"><span className="text-white/20 w-6 text-right select-none shrink-0">18</span><span className="pl-4 text-[#8b949e] italic">// The secret to shipping fast</span></div>
+                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">19</span><span className="pl-4 text-[#ff7b72]">for</span> <span className="text-white">me.Coffee &gt; </span><span className="text-[#79c0ff]">0</span> <span className="text-white">{"{"}</span></div>
+                  <div className="flex gap-2 group-hover:bg-white/5 transition-colors rounded"><span className="text-white/20 w-6 text-right select-none shrink-0">20</span><span className="pl-8">me.</span><span className="text-[#d2a8ff]">BuildSomethingAwesome</span><span className="text-white">()</span></div>
+                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">21</span><span className="pl-4 text-white">{"}"}</span></div>
+                  <div className="flex gap-2"><span className="text-white/20 w-6 text-right select-none shrink-0">22</span><span className="text-white">{"}"}</span></div>
                 </div>
               </div>
 
-              {/* Window 2 - Telemetry / Deployment Dashboard */}
-              <div className="absolute right-[-2%] bottom-[12%] w-[340px] bg-background/80 backdrop-blur-2xl border border-white/20 dark:border-white/10 rounded-2xl p-5 shadow-[0_20px_40px_rgba(0,0,0,0.12)] transform rotate-3 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 z-10 ease-out group overflow-hidden">
-                <div className="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/10 blur-[40px] pointer-events-none group-hover:bg-emerald-500/20 transition-colors duration-500"></div>
-                
-                <div className="flex justify-between items-center mb-5 relative z-10">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]"></div>
-                    <span className="font-semibold text-xs tracking-tight">Global Edge Network</span>
-                  </div>
-                  <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 px-2 py-0.5 rounded-full">99.99% UP</span>
-                </div>
-                
-                <div className="space-y-4 relative z-10">
-                  {/* Miniature SVG Chart - Dynamic glowing line */}
-                  <div className="w-full h-16 relative group-hover:opacity-100 transition-opacity">
-                     <svg viewBox="0 0 100 30" className="w-full h-full text-primary drop-shadow-md overflow-visible" preserveAspectRatio="none">
-                       <path d="M0,25 Q10,15 20,20 T40,10 T60,18 T80,5 T100,12" fill="none" stroke="url(#lineGrad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke"/>
-                       <path d="M0,25 Q10,15 20,20 T40,10 T60,18 T80,5 T100,12 L100,30 L0,30 Z" fill="url(#latencyGrad)" opacity="0.15" />
-                       <defs>
-                         <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                           <stop offset="0%" stopColor="currentColor" stopOpacity="0.5" />
-                           <stop offset="100%" stopColor="currentColor" />
-                         </linearGradient>
-                         <linearGradient id="latencyGrad" x1="0" y1="0" x2="0" y2="1">
-                           <stop offset="0%" stopColor="currentColor" />
-                           <stop offset="100%" stopColor="transparent" />
-                         </linearGradient>
-                       </defs>
-                     </svg>
-                     
-                     {/* Overlay data points */}
-                     <div className="absolute top-[25%] left-[40%] w-2 h-2 bg-background border-[1.5px] border-primary rounded-full shadow-sm hover:scale-150 transition-transform cursor-crosshair group-hover:shadow-[0_0_8px_currentColor]"></div>
-                     <div className="absolute top-[5%] right-[20%] w-2 h-2 bg-background border-[1.5px] border-primary rounded-full shadow-sm hover:scale-150 transition-transform cursor-crosshair group-hover:shadow-[0_0_8px_currentColor]"></div>
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-3 text-left">
-                    <div className="bg-muted/40 rounded-xl p-3 border border-border/40 backdrop-blur-sm transition-colors hover:bg-muted/80">
-                      <div className="text-[9px] text-muted-foreground uppercase tracking-widest mb-1.5 font-medium">US-East</div>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-xl font-bold tracking-tighter text-foreground">12</span><span className="text-[10px] text-muted-foreground font-mono">ms</span>
-                      </div>
-                    </div>
-                    <div className="bg-muted/40 rounded-xl p-3 border border-border/40 backdrop-blur-sm transition-colors hover:bg-muted/80">
-                      <div className="text-[9px] text-muted-foreground uppercase tracking-widest mb-1.5 font-medium">EU-Central</div>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-xl font-bold tracking-tighter text-foreground">24</span><span className="text-[10px] text-muted-foreground font-mono">ms</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-10 right-10 text-[10px] text-muted-foreground font-mono tracking-widest uppercase opacity-40">
-                Performance Metrics
-              </div>
               
             </div>
           </div>
