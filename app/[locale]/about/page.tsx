@@ -16,9 +16,17 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const { content } = await renderMDX(source);
 
   return (
-    <div className="layout">
-      <section className="hero"><h1>{dict.about.title}</h1></section>
-      <article className="prose">{content}</article>
+    <div className="layout pt-32 pb-24 md:pt-40 min-h-screen max-w-3xl">
+      <div className="animate-reveal">
+        <section className="mb-12 md:mb-16 py-0 flex flex-col items-start">
+          <h1 className="text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] tracking-tight font-extrabold text-foreground">
+            {dict.about.title}
+          </h1>
+        </section>
+        <article className="prose animate-reveal delay-1 w-full max-w-none text-lg">
+          {content}
+        </article>
+      </div>
     </div>
   );
 }

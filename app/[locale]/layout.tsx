@@ -18,7 +18,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   return {
-    title: locale === "ku" ? "شاهۆ | گەشەپێدەری فوڵ ستاک" : "Shaho | Full Stack Developer",
+    title: locale === "ku" ? "شەهرام | گەشەپێدەری فوڵ ستاک" : "Shahram M. Hassan | Full Stack Developer",
     description: locale === "ku"
       ? "گەشەپێدەری فوڵ ستاک - Go، Laravel، React"
       : "Full Stack Developer - Go, Laravel, React & TypeScript",
@@ -43,7 +43,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
-      <body className={`${fontClass} ${locale === "ku" ? "font-[var(--font-noto-arabic)]" : ""}`}>
+      <body className={`${fontClass} ${locale === "ku" ? "font-[var(--font-noto-arabic)]" : ""}`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header locale={locale} dict={dict} />
           <main>{children}</main>

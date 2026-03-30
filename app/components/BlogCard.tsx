@@ -1,20 +1,21 @@
 import type { BlogPost } from "@/lib/types";
-import { Badge } from "@/components/ui/badge";
+import { ViewTransitionLink } from "./ViewTransitionLink";
 
 export default function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <a href={`/ku/blog/${post.topic}/${post.slug}`} className="list-item block no-underline text-inherit">
-      <div className="flex justify-between items-baseline gap-4">
-        <h3 className="text-lg font-medium">{post.frontmatter.title}</h3>
-        <span className="font-mono text-xs text-muted-foreground shrink-0">
-          {post.frontmatter.readingTime} خولەک
-        </span>
+    <ViewTransitionLink href={`/ku/blog/${post.topic}/${post.slug}`} className="group flex flex-col gap-3 no-underline focus:outline-none w-full p-4 rounded-xl border border-transparent hover:border-border hover:bg-muted/30 transition-all duration-300">
+      <div className="flex flex-col gap-2">
+        <div className="flex gap-3 mt-1 items-center">
+          <span className="font-semibold text-[11px] tracking-wide text-muted-foreground bg-muted border border-border/50 px-2 py-0.5 rounded-md capitalize">{post.topic}</span>
+          <span className="text-xs text-muted-foreground font-medium">{post.frontmatter.date}</span>
+        </div>
+        <h3 className="text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary leading-snug">
+          {post.frontmatter.title}
+        </h3>
+        <p className="text-foreground/70 font-medium line-clamp-2 leading-relaxed">
+          {post.frontmatter.excerpt}
+        </p>
       </div>
-      <p className="text-muted-foreground text-sm mt-2">{post.frontmatter.excerpt}</p>
-      <div className="flex gap-2 mt-2 items-center">
-        <Badge variant="secondary" className="font-mono text-xs">{post.topic}</Badge>
-        <span className="font-mono text-xs text-muted-foreground">{post.frontmatter.date}</span>
-      </div>
-    </a>
+    </ViewTransitionLink>
   );
 }

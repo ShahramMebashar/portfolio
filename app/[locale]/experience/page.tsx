@@ -22,9 +22,17 @@ export default async function ExperiencePage({ params }: { params: Promise<{ loc
   const entries = await getExperienceData(locale as Locale);
 
   return (
-    <div className="layout">
-      <section className="hero"><h1>{dict.experience.title}</h1></section>
-      <Timeline entries={entries} />
+    <div className="layout pt-32 pb-24 md:pt-40 min-h-screen">
+      <div className="animate-reveal max-w-3xl">
+        <section className="mb-12 md:mb-16 py-0 flex flex-col items-start">
+          <h1 className="text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] tracking-tight font-extrabold text-foreground">
+            {dict.experience.title}
+          </h1>
+        </section>
+        <div className="animate-reveal delay-1">
+          <Timeline entries={entries} />
+        </div>
+      </div>
     </div>
   );
 }

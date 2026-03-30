@@ -4,7 +4,7 @@ import type { Locale, ProjectFrontmatter } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
 import { getProjectSource } from "@/lib/content";
 import { renderMDX } from "@/lib/mdx";
-import { Badge } from "@/components/ui/badge";
+import { ViewTransitionLink } from "@/app/components/ViewTransitionLink";
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
@@ -17,19 +17,27 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   const { content, frontmatter } = await renderMDX<ProjectFrontmatter>(source);
 
   return (
-    <div className="layout">
-      <a href={`/${locale}/projects`} className="text-primary text-sm">← {dict.common.back}</a>
-      <article className="mt-8">
-        <header className="mb-8">
-          <h1 className="text-[clamp(1.5rem,4vw,2.5rem)] leading-tight">{frontmatter.title}</h1>
-          <div className="flex gap-2 flex-wrap mt-4">
-            {frontmatter.tech.map((t) => (
-              <Badge key={t} variant="outline" className="font-mono text-primary border-primary">{t}</Badge>
-            ))}
+    <div className="layout pt-32 pb-24 md:pt-40 min-h-screen">
+      <div className="max-w-4xl mx-auto">
+        <ViewTransitionLink href={`/${locale}/projects`} className="inline-flex items-center gap-2 text-sm text-muted-foreground font-semibold hover:text-foreground transition-colors mb-12">
+          ← {dict.common.back}
+        </ViewTransitionLink>
+        <article>
+          <header className="mb-12 animate-reveal">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6 leading-tight">{frontmatter.title}</h1>
+            <div className="flex gap-3 flex-wrap">
+              {frontmatter.tech.map((t) => (
+                <span key={t} className="font-semibold text-xs tracking-wide text-foreground px-3 py-1 bg-muted/50 rounded-md border border-border/50">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </header>
+          <div className="prose animate-reveal delay-1 w-full max-w-none text-lg">
+            {content}
           </div>
-        </header>
-        <div className="prose">{content}</div>
-      </article>
+        </article>
+      </div>
     </div>
   );
 }
