@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="w-full py-16 px-6 md:px-12 mt-20 border-t border-border/40 relative z-10">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-[13px] font-medium text-muted-foreground">
+    <footer className="w-full py-12 px-6 md:px-12 relative z-10">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8 text-[13px] font-medium text-muted-foreground">
         <span className="text-foreground/80 tracking-tight">&copy; {new Date().getFullYear()} Shahram M. Hassan</span>
         <div className="flex gap-8">
           <a href="https://github.com/ShahramMebashar" target="_blank" rel="noopener noreferrer" className="hover:text-foreground relative group transition-colors">

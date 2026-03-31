@@ -14,7 +14,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <div className="w-full border-b border-border/40">
-      <div className="layout pt-32 pb-24 md:pt-40 min-h-screen">
+      <div className="layout pt-32 pb-16 md:pt-40 min-h-screen">
         <div className="relative w-full overflow-visible">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 min-h-[75vh] relative z-10 w-full">
           
