@@ -39,30 +39,30 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </div>
 
             <h1 className="text-[3.5rem] md:text-[5.5rem] leading-[0.95] tracking-[-0.04em] font-extrabold text-foreground mb-6 transition-all">
-              Hello.<br />
+              {dict.home.greeting}<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-br from-foreground to-foreground/50">
-                I&apos;m Shahram.
+                {dict.home.name}
               </span>
             </h1>
 
             <h2 className="text-lg md:text-xl font-medium text-muted-foreground leading-snug mb-8 tracking-tight">
-              Full Stack Developer <span className="mx-2 text-border">|</span> I Bring Ideas to Life
+              {dict.home.subtitle} <span className="mx-2 text-border">|</span> {dict.home.subtitle_tagline}
             </h2>
 
             <p className="text-foreground/75 leading-relaxed mb-6 font-normal text-base md:text-[1.05rem]">
-              I turn ideas into real products. From MVPs for startups to scalable production systems — I work across the entire stack with Go, Laravel, React, Vue, and Flutter to ship fast and ship right.
+              {dict.home.bio}
             </p>
 
             <p className="text-foreground font-medium mb-4">
-              Got an idea that needs building? <span className="text-foreground/60">Let&apos;s make it happen.</span>
+              {dict.home.cta_question} <span className="text-foreground/60">{dict.home.cta_answer}</span>
             </p>
 
             <ul className="text-foreground/70 leading-relaxed mb-10 list-none space-y-2.5 font-sans">
               {[
-                "MVPs & startup products — idea to launch",
-                "Full stack web apps with Go, Laravel, React & Vue",
-                "Mobile apps with Flutter (iOS & Android)",
-                "APIs, databases, DevOps — the full picture"
+                dict.home.skill_1,
+                dict.home.skill_2,
+                dict.home.skill_3,
+                dict.home.skill_4,
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
                   <svg className="w-4 h-4 text-primary opacity-70 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -75,12 +75,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <ViewTransitionLink href="mailto:hello@shaho.dev" className="group relative px-7 py-3 rounded-full bg-foreground text-background font-semibold overflow-hidden transition-all hover:scale-105 active:scale-95 text-sm shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] dark:shadow-[0_4px_14px_0_rgba(255,255,255,0.05)]">
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary/50 to-blue-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 <span className="relative flex items-center justify-center">
-                  Schedule a meeting
+                  {dict.home.btn_contact}
                   <svg className="ms-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </span>
               </ViewTransitionLink>
               <ViewTransitionLink href={`/${locale}/about`} className="px-7 py-3 rounded-full bg-transparent text-foreground border border-border/80 font-semibold transition-all hover:bg-muted/50 hover:border-foreground/20 text-sm">
-                Resume
+                {dict.home.btn_resume}
               </ViewTransitionLink>
             </div>
           </div>
