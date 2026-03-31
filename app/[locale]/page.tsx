@@ -44,7 +44,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </h1>
 
             <h2 className="text-lg md:text-xl font-medium text-muted-foreground leading-snug mb-8 tracking-tight">
-              {dict.home.subtitle} <span className="mx-2 text-border">|</span> {dict.home.subtitle_tagline}
+              {dict.home.subtitle} <span className="mx-1 text-muted-foreground/40">|</span> {dict.home.subtitle_tagline}
             </h2>
 
             <p className="text-foreground/75 leading-relaxed mb-6 font-normal text-base md:text-[1.05rem]">
