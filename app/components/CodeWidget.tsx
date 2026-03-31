@@ -51,7 +51,7 @@ export default function CodeWidget() {
   const [tab, setTab] = useState<"code" | "log">("code");
 
   return (
-    <div dir="ltr" className="absolute left-[-2%] top-[10%] w-[400px] bg-[#0d0d0d] backdrop-blur-3xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_24px_48px_rgba(0,0,0,0.3)] transform -rotate-3 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 z-20 ease-out">
+    <div dir="ltr" className="absolute right-0 top-[10%] w-[400px] bg-[#0d0d0d] backdrop-blur-3xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_24px_48px_rgba(0,0,0,0.3)] transform -rotate-3 hover:-translate-y-2 hover:rotate-0 transition-all duration-500 z-20 ease-out">
       {/* Header with clickable tabs */}
       <div className="flex items-center px-4 py-3 border-b border-white/5 bg-white/5">
         <div className="flex gap-1.5 mr-5 opacity-70">
