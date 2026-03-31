@@ -9,13 +9,13 @@
   "home": {
     "greeting": "سڵاو.",
     "name": "من شەهرامم.",
-    "subtitle": "گەشەپێدەری فوڵ ستاک",
+    "subtitle": "Full-Stack Developer",
     "subtitle_tagline": "بیرۆکەکان دەگۆڕمە ڕاستەقینە",
     "bio": "بیرۆکەکان دەگۆڕم بۆ بەرهەمی ڕاستەقینە. لە MVP ی ستارتئەپەوە بۆ سیستەمی بەرهەمهێنانی گەورە — لە هەموو ئاستەکاندا کاردەکەم بە Go، Laravel، React، Vue، و Flutter بۆ ناردنی خێرا و دروست.",
     "cta_question": "بیرۆکەیەکت هەیە کە پێویستی بە دروستکردنە؟",
     "cta_answer": "با ڕاستی بکەینەوە.",
     "skill_1": "MVP و بەرهەمی ستارتئەپ — لە بیرۆکە بۆ بڵاوکردنەوە",
-    "skill_2": "ئەپی وێبی فوڵ ستاک بە Go، Laravel، React و Vue",
+    "skill_2": "ئەپی وێبی Full-Stack بە Go، Laravel، React و Vue",
     "skill_3": "ئەپی مۆبایل بە Flutter (iOS و Android)",
     "skill_4": "API، داتابەیس، DevOps — وێنەی تەواو",
     "btn_contact": "کاتێک دابنێ بۆ کۆبوونەوە",
@@ -30,7 +30,7 @@
   "projects": {
     "title": "پڕۆژەکان",
     "filter_all": "هەموو",
-    "filter_fullstack": "فوڵ ستاک",
+    "filter_fullstack": "Full-Stack",
     "filter_backend": "باکێند",
     "filter_frontend": "فرۆنتێند"
   },
