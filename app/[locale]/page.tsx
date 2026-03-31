@@ -38,7 +38,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </div>
             </div>
 
-            <h1 className="text-[2.5rem] md:text-[4rem] leading-[0.95] tracking-[-0.03em] font-extrabold text-foreground mb-6 transition-all">
+            <h1 className={`text-[2.5rem] md:text-[4rem] tracking-[-0.03em] font-extrabold text-foreground mb-6 transition-all ${locale === "ku" ? "leading-[1.3]" : "leading-[0.95]"}`}>
               {dict.home.greeting}<br />
               {dict.home.name}
             </h1>
