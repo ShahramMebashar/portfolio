@@ -26,7 +26,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-[18px] bg-muted/40 border border-border/60 overflow-hidden flex items-center justify-center relative shadow-sm transition-transform duration-500 group-hover:scale-105 z-10">
                 <span className="text-muted-foreground font-mono text-xs">SH</span>
                 <Image 
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=256&h=256&auto=format&fit=crop" 
+                  src="https://media.licdn.com/dms/image/v2/D4D03AQFnKE4fJoM_9Q/profile-displayphoto-scale_400_400/B4DZyKMg4fGQAg-/0/1771845066444?e=1776297600&v=beta&t=4EOiM9gVL5sVVwt14o7BTusLJLFC-kCckOJRpLB4Hgg" 
                   alt="Avatar" 
                   fill 
                   className="object-cover" 
@@ -38,11 +38,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </div>
             </div>
 
-            <h1 className="text-[3.5rem] md:text-[5.5rem] leading-[0.95] tracking-[-0.04em] font-extrabold text-foreground mb-6 transition-all">
+            <h1 className="text-[2.5rem] md:text-[4rem] leading-[0.95] tracking-[-0.03em] font-extrabold text-foreground mb-6 transition-all">
               {dict.home.greeting}<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-foreground to-foreground/50">
-                {dict.home.name}
-              </span>
+              {dict.home.name}
             </h1>
 
             <h2 className="text-lg md:text-xl font-medium text-muted-foreground leading-snug mb-8 tracking-tight">
