@@ -1,23 +1,47 @@
 [
   {
-    "company": "Company Name",
-    "role": "Senior Full Stack Developer",
-    "period": "2024 — Present",
-    "tech": ["Go", "React", "PostgreSQL", "Docker"],
+    "company": "Awrosoft",
+    "role": "Full-Stack Software Developer & Team Leader",
+    "period": "2023 — Present",
+    "tech": ["Laravel", "Go", "PHP", "MySQL", "PostgreSQL", "PostGIS", "Redis"],
     "achievements": [
-      "Architected microservices handling 50k RPM",
-      "Led team of 4 developers",
-      "Reduced API latency by 60%"
+      "Led a development team delivering scalable web and mobile applications for government and private sector clients",
+      "Designed and implemented backend services using Laravel, Go, MySQL, PostgreSQL (PostGIS), and Redis",
+      "Supervised a cross-functional team of developers, providing guidance on architecture, coding standards, and best practices"
     ]
   },
   {
-    "company": "Previous Company",
-    "role": "Full Stack Developer",
-    "period": "2022 — 2024",
-    "tech": ["Laravel", "Vue.js", "MySQL", "Redis"],
+    "company": "Golden Prizma (formerly ShipToKurdistan)",
+    "role": "Full-Stack Web and Mobile Developer",
+    "period": "2021 — 2023",
+    "tech": ["Laravel", "Vue.js", "TailwindCSS", "Redis", "MySQL", "Flutter"],
     "achievements": [
-      "Built e-commerce platform processing $2M/month",
-      "Implemented real-time inventory system"
+      "Developed a complex shipping system using PHP Laravel, Redis, and MySQL for backend",
+      "Built frontend with Vue.js and TailwindCSS",
+      "Developed mobile app for both iOS and Android using Flutter",
+      "Deployed to stage and production using Laravel Envoy, Linux VPS, NGINX, and GitHub"
+    ]
+  },
+  {
+    "company": "Awrosoft",
+    "role": "UI Designer / Full-Stack Web Developer",
+    "period": "2019 — 2020",
+    "tech": ["Laravel", "React", "Vue.js", "HTML", "CSS"],
+    "achievements": [
+      "Developed landing pages, dashboards, and online applications using PHP Laravel, React, and Vue.js",
+      "Optimized scripts and image web assets for speed and performance",
+      "Completed full redesigns of existing websites to improve navigation, enhance visuals, and strengthen SEO"
+    ]
+  },
+  {
+    "company": "TarinNet",
+    "role": "Technical Supervisor",
+    "period": "2013 — 2018",
+    "tech": ["Networking", "Wi-Fi", "Point-to-Point"],
+    "achievements": [
+      "Installing and maintaining Wi-Fi routers and internet towers for home and business users",
+      "Set up small office networks and point-to-point links",
+      "Prepared daily and weekly reports to head office"
     ]
   }
 ]

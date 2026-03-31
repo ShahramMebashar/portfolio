@@ -1,13 +1,47 @@
 [
   {
-    "company": "ناوی کۆمپانیا",
-    "role": "Senior Full-Stack Developer",
-    "period": "٢٠٢٤ — ئێستا",
-    "tech": ["Go", "React", "PostgreSQL", "Docker"],
+    "company": "ئاوڕۆسۆفت",
+    "role": "Full-Stack Software Developer & Team Leader",
+    "period": "٢٠٢٣ — ئێستا",
+    "tech": ["Laravel", "Go", "PHP", "MySQL", "PostgreSQL", "PostGIS", "Redis"],
     "achievements": [
-      "دامەزراندنی مایکرۆسێرڤیسەکان کە ٥٠ هەزار داواکاری لە خولەکێکدا بەڕێوە دەبات",
-      "سەرکردایەتی تیمی ٤ گەشەپێدەر",
-      "کەمکردنەوەی دواکەوتنی API بە ڕێژەی ٦٠٪"
+      "سەرکردایەتی تیمێکی گەشەپێدان بۆ دروستکردنی ئەپڵیکەیشنی وێب و مۆبایلی گەورە بۆ حکومەت و بواری تایبەت",
+      "دیزاین و جێبەجێکردنی خزمەتگوزاریەکانی باکێند بە Laravel، Go، MySQL، PostgreSQL (PostGIS)، و Redis",
+      "چاودێری تیمێکی گەشەپێدەر و ڕێنمایی لەسەر ئارکیتێکچەر، ستاندارد، و باشترین ڕێگاکان"
+    ]
+  },
+  {
+    "company": "گۆڵدن پریزما (پێشتر ShipToKurdistan)",
+    "role": "Full-Stack Web and Mobile Developer",
+    "period": "٢٠٢١ — ٢٠٢٣",
+    "tech": ["Laravel", "Vue.js", "TailwindCSS", "Redis", "MySQL", "Flutter"],
+    "achievements": [
+      "دروستکردنی سیستەمێکی ئاڵۆزی بارنامە بە PHP Laravel، Redis، و MySQL بۆ باکێند",
+      "دروستکردنی فرۆنتێند بە Vue.js و TailwindCSS",
+      "دروستکردنی ئەپی مۆبایل بۆ iOS و Android بە Flutter",
+      "دابەزاندن بۆ سێرڤەری تاقیکردنەوە و بەرهەمهێنان بە Laravel Envoy، Linux VPS، NGINX، و GitHub"
+    ]
+  },
+  {
+    "company": "ئاوڕۆسۆفت",
+    "role": "UI Designer / Full-Stack Web Developer",
+    "period": "٢٠١٩ — ٢٠٢٠",
+    "tech": ["Laravel", "React", "Vue.js", "HTML", "CSS"],
+    "achievements": [
+      "دروستکردنی پەڕەی دابەزین، داشبۆرد، و ئەپڵیکەیشنی ئۆنلاین بە PHP Laravel، React، و Vue.js",
+      "باشکردنی سکریپت و وێنەی وێب بۆ خێرایی و ئەدا",
+      "دیزاینکردنەوەی تەواوی وێبسایتەکان بۆ باشترکردنی نەڤیگەیشن، دیزاین، و SEO"
+    ]
+  },
+  {
+    "company": "تارین نێت",
+    "role": "Technical Supervisor",
+    "period": "٢٠١٣ — ٢٠١٨",
+    "tech": ["Networking", "Wi-Fi", "Point-to-Point"],
+    "achievements": [
+      "دامەزراندن و چاککردنەوەی ڕاوتەری Wi-Fi و بورجی ئینتەرنێت بۆ ماڵ و بازرگانی",
+      "دامەزراندنی تۆڕی ئۆفیسی بچووک و لینکی نۆقتە بۆ نۆقتە",
+      "ئامادەکردنی ڕاپۆرتی ڕۆژانە و هەفتانە بۆ بارەگای سەرەکی"
     ]
   }
 ]
