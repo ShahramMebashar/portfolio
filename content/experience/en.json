@@ -1,8 +1,19 @@
 [
   {
+    "company": "Freelance",
+    "role": "Full-Stack Developer",
+    "period": "2025 — Present",
+    "tech": ["Go", "Laravel", "React", "Vue.js", "Flutter", "PostgreSQL"],
+    "achievements": [
+      "Building custom web and mobile applications for clients across multiple industries",
+      "Delivering full-cycle projects from requirements through to deployment",
+      "Working directly with clients on MVP development for startups"
+    ]
+  },
+  {
     "company": "Awrosoft",
     "role": "Full-Stack Software Developer & Team Leader",
-    "period": "2023 — Present",
+    "period": "2023 — 2025",
     "tech": ["Laravel", "Go", "PHP", "MySQL", "PostgreSQL", "PostGIS", "Redis"],
     "achievements": [
       "Led a development team delivering scalable web and mobile applications for government and private sector clients",

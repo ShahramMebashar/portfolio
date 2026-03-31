@@ -12,11 +12,19 @@ interface TimelineProps { entries: TimelineEntry[]; }
 
 export default function Timeline({ entries }: TimelineProps) {
   return (
-    <div className="relative ps-8">
-      <div className="absolute start-0 top-0 bottom-0 w-0.5 bg-border" />
+    <div className="relative">
       {entries.map((entry, i) => (
         <div key={i} className="relative mb-10">
-          <div className={`absolute -start-[2.05rem] top-1.5 size-2.5 rounded-full ${i === 0 ? "bg-primary" : "bg-border"}`} />
+          {/* Dot centered on the page's architectural border line (border-x on max-w-5xl).
+              Layout padding: px-6 (1.5rem) mobile, px-12 (3rem) desktop.
+              Dot size: size-2.5 (10px), half = 5px.
+              start = -(padding + half-dot) positions center of dot on the border.
+              Logical property `start` works for both LTR and RTL. */}
+          <div
+            className={`absolute start-[calc(-1.5rem_-_5px)] md:start-[calc(-3rem_-_5px)] top-1.5 size-2.5 rounded-full ring-2 ring-background ${
+              i === 0 ? "bg-primary" : "bg-border"
+            }`}
+          />
           <div className="font-mono text-xs text-muted-foreground mb-1">{entry.period}</div>
           <h3 className="text-lg font-medium mb-0.5">{entry.role}</h3>
           <div className="text-primary text-sm mb-3">{entry.company}</div>

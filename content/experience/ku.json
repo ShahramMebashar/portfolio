@@ -1,8 +1,19 @@
 [
   {
+    "company": "فریلانسەر",
+    "role": "Full-Stack Developer فریلانسەر",
+    "period": "٢٠٢٥ — ئێستا",
+    "tech": ["Go", "Laravel", "React", "Vue.js", "Flutter", "PostgreSQL"],
+    "achievements": [
+      "دروستکردنی ئەپڵیکەیشنی وێب و مۆبایلی تایبەت بۆ کڕیاران لە بواری جیاواز",
+      "گەیاندنی پڕۆژەکانی تەواو لە پێداویستی بۆ دابەزاندن",
+      "کارکردن ڕاستەوخۆ لەگەڵ کڕیاران لەسەر MVP ی ستارتئەپەکان"
+    ]
+  },
+  {
     "company": "ئاوڕۆسۆفت",
     "role": "Full-Stack Software Developer & Team Leader",
-    "period": "٢٠٢٣ — ئێستا",
+    "period": "٢٠٢٣ — ٢٠٢٥",
     "tech": ["Laravel", "Go", "PHP", "MySQL", "PostgreSQL", "PostGIS", "Redis"],
     "achievements": [
       "سەرکردایەتی تیمێکی گەشەپێدان بۆ دروستکردنی ئەپڵیکەیشنی وێب و مۆبایلی گەورە بۆ حکومەت و بواری تایبەت",
