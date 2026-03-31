@@ -22,7 +22,7 @@ export default function Header({ locale, dict }: HeaderProps) {
 
   const navItems = [
     { href: `/${locale}`, label: dict.nav.home },
-    { href: "/ku/blog", label: dict.nav.blog },
+    // { href: "/ku/blog", label: dict.nav.blog }, // TODO: re-enable when blog content is ready
     { href: `/${locale}/projects`, label: dict.nav.projects },
     { href: `/${locale}/experience`, label: dict.nav.experience },
     { href: `/${locale}/about`, label: dict.nav.about },
