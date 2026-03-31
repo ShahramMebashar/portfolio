@@ -19,7 +19,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 min-h-[75vh] relative z-10 w-full">
           
           {/* LEFT COLUMN: HERO TEXT */}
-          <div className="flex flex-col justify-center max-w-xl animate-reveal select-none">
+          <div className="flex flex-col justify-center max-w-xl animate-reveal">
             
             <div className="relative mb-10 w-fit group">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-blue-500/30 rounded-[22px] blur-sm group-hover:blur-md transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
