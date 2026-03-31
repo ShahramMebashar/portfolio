@@ -33,13 +33,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   priority
                 />
               </div>
-              <div className="absolute -bottom-2 -end-2 bg-background border border-border/80 shadow-md rounded-full p-1.5 flex items-center justify-center text-lg z-20 w-8 h-8 md:w-9 md:h-9 hover:rotate-12 transition-transform cursor-default">
-                👋
-              </div>
             </div>
 
             <h1 className={`text-[2.5rem] md:text-[4rem] tracking-[-0.03em] font-extrabold text-foreground mb-6 transition-all ${locale === "ku" ? "leading-[1.3]" : "leading-[0.95]"}`}>
-              {dict.home.greeting}<br />
+              {dict.home.greeting} <span className="inline-block hover:rotate-12 transition-transform cursor-default">👋</span><br />
               {dict.home.name}
             </h1>
 
