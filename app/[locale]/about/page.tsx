@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
 import { getContentSource } from "@/lib/content";
 import { renderMDX } from "@/lib/mdx";
+import GitHubCalendar from "@/app/components/GitHubCalendar";
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -26,6 +27,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <article className="prose animate-reveal delay-1 w-full max-w-none text-lg">
           {content}
         </article>
+        <div className="mt-12 pt-12 border-t border-border/40 animate-reveal delay-2">
+          <h2 className="text-sm font-mono text-muted-foreground mb-6 tracking-wide uppercase">GitHub Contributions</h2>
+          <GitHubCalendar />
+        </div>
       </div>
     </div>
   );

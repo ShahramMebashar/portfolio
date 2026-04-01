@@ -25,11 +25,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-blue-500/30 rounded-[22px] blur-sm group-hover:blur-md transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-[18px] bg-muted/40 border border-border/60 overflow-hidden flex items-center justify-center relative shadow-sm transition-transform duration-500 group-hover:scale-105 z-10">
                 <span className="text-muted-foreground font-mono text-xs">SH</span>
-                <Image 
-                  src="https://media.licdn.com/dms/image/v2/D4D03AQFnKE4fJoM_9Q/profile-displayphoto-scale_400_400/B4DZyKMg4fGQAg-/0/1771845066444?e=1776297600&v=beta&t=4EOiM9gVL5sVVwt14o7BTusLJLFC-kCckOJRpLB4Hgg" 
-                  alt="Avatar" 
-                  fill 
-                  className="object-cover" 
+                <Image
+                  src="https://media.licdn.com/dms/image/v2/D4D03AQFnKE4fJoM_9Q/profile-displayphoto-scale_400_400/B4DZyKMg4fGQAg-/0/1771845066444?e=1776297600&v=beta&t=4EOiM9gVL5sVVwt14o7BTusLJLFC-kCckOJRpLB4Hgg"
+                  alt="Avatar"
+                  fill
+                  sizes="96px"
+                  className="object-cover"
                   priority
                 />
               </div>

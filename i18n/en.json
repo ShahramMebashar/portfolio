@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "work": "Work",
     "projects": "Projects",
     "blog": "Blog",
     "about": "About",
@@ -26,6 +27,9 @@
     "view_all_projects": "View All Projects",
     "view_all_posts": "View All Posts",
     "get_in_touch": "Get in Touch"
+  },
+  "work": {
+    "title": "Work"
   },
   "projects": {
     "title": "Projects",
