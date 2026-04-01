@@ -15,9 +15,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <div className="w-full">
-      <div className="layout pt-32 pb-16 md:pt-40 min-h-screen border-b border-border/40">
+      <div className="layout pt-32 pb-8 md:pt-40 md:pb-12 border-b border-border/10">
         <div className="relative w-full overflow-visible">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 min-h-[75vh] relative z-10 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 relative z-10 w-full">
           
           {/* LEFT COLUMN: HERO TEXT */}
           <div className="flex flex-col justify-center max-w-xl animate-reveal">
@@ -98,7 +98,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
       </div>
     </div>
-      <div className="layout py-16 md:py-24 border-b border-border/40 animate-reveal delay-2">
+      <div className="layout pt-12 pb-20 md:pt-16 md:pb-28 border-b border-border/10 animate-reveal delay-2">
         <TechStack langLabel={dict.home.section_languages} toolsLabel={dict.home.section_tools} />
       </div>
     </div>

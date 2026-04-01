@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  SiGo, SiPhp, SiJavascript, SiTypescript, SiDart, SiHtml5, SiCss, SiCplusplus,
+  SiGo, SiPhp, SiJavascript, SiTypescript, SiDart, SiHtml5, SiCss,
   SiLaravel, SiReact, SiVuedotjs, SiFlutter, SiNextdotjs, SiTailwindcss,
   SiPostgresql, SiMysql, SiRedis, SiDocker, SiGit, SiLinux, SiNginx,
 } from "react-icons/si";
@@ -15,7 +15,6 @@ const languages: { Icon: IconType; name: string; color: string }[] = [
   { Icon: SiDart,       name: "Dart",       color: "#0175C2" },
   { Icon: SiHtml5,      name: "HTML",       color: "#E34F26" },
   { Icon: SiCss,        name: "CSS",        color: "#1572B6" },
-  { Icon: SiCplusplus,  name: "C++",        color: "#00599C" },
 ];
 
 const tools: { Icon: IconType; name: string; color: string }[] = [
