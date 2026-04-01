@@ -26,7 +26,9 @@
     "latest_posts": "تازەترین بابەتەکان",
     "view_all_projects": "هەموو پڕۆژەکان ببینە",
     "view_all_posts": "هەموو بابەتەکان ببینە",
-    "get_in_touch": "پەیوەندیمان پێوە بکە"
+    "get_in_touch": "پەیوەندیمان پێوە بکە",
+    "section_languages": "زمانەکان",
+    "section_tools": "ئامرازەکان"
   },
   "projects": {
     "title": "پڕۆژەکان",

@@ -26,7 +26,9 @@
     "latest_posts": "Latest Posts",
     "view_all_projects": "View All Projects",
     "view_all_posts": "View All Posts",
-    "get_in_touch": "Get in Touch"
+    "get_in_touch": "Get in Touch",
+    "section_languages": "Languages",
+    "section_tools": "Tools"
   },
   "work": {
     "title": "Work"

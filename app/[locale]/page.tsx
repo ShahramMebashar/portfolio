@@ -5,6 +5,7 @@ import { getDictionary } from "@/lib/i18n";
 import { ViewTransitionLink } from "@/app/components/ViewTransitionLink";
 import Image from "next/image";
 import CodeWidget from "@/app/components/CodeWidget";
+import TechStack from "@/app/components/TechStack";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -13,8 +14,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const dict = await getDictionary(locale as Locale);
 
   return (
-    <div className="w-full border-b border-border/40">
-      <div className="layout pt-32 pb-16 md:pt-40 min-h-screen">
+    <div className="w-full">
+      <div className="layout pt-32 pb-16 md:pt-40 min-h-screen border-b border-border/40">
         <div className="relative w-full overflow-visible">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 min-h-[75vh] relative z-10 w-full">
           
@@ -97,6 +98,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
       </div>
     </div>
+      <div className="layout py-16 md:py-24 border-b border-border/40 animate-reveal delay-2">
+        <TechStack langLabel={dict.home.section_languages} toolsLabel={dict.home.section_tools} />
+      </div>
     </div>
   );
 }
