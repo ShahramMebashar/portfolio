@@ -32,7 +32,7 @@ export default async function WorkPage({ params, searchParams }: { params: Promi
         <div className="mb-12 md:mb-16 animate-reveal delay-1">
           <ProjectFilters categories={categories} techTags={techTags} labels={{ all: dict.projects.filter_all, fullstack: dict.projects.filter_fullstack, backend: dict.projects.filter_backend, frontend: dict.projects.filter_frontend }} />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-reveal delay-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 animate-reveal delay-2">
           {filtered.map((project) => (<ProjectCard key={project.slug} project={project} locale={locale as Locale} basePath="work" />))}
         </div>
       </div>

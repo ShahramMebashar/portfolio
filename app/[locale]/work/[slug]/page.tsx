@@ -5,6 +5,7 @@ import { getDictionary } from "@/lib/i18n";
 import { getProjectSource } from "@/lib/content";
 import { renderMDX } from "@/lib/mdx";
 import TechIcons from "@/app/components/TechIcons";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function WorkDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
@@ -24,11 +25,23 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ loc
           ← {dict.common.back}
         </Link>
         <article>
-          <header className="mb-12 animate-reveal">
+          <header className="mb-10 animate-reveal">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6 leading-tight">{frontmatter.title}</h1>
             <TechIcons items={frontmatter.tech} size="md" />
           </header>
-          <div className="prose animate-reveal delay-1 w-full max-w-none text-lg">
+          {frontmatter.thumbnail && (
+            <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl border border-border/50 bg-muted/30 mb-12 animate-reveal delay-1">
+              <Image
+                src={frontmatter.thumbnail}
+                alt={frontmatter.title}
+                fill
+                sizes="(min-width: 768px) 896px, 100vw"
+                className="object-cover"
+                priority
+              />
+            </div>
+          )}
+          <div className="prose animate-reveal delay-2 w-full max-w-none text-lg">
             {content}
           </div>
         </article>
