@@ -30,9 +30,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   alt="Shahram M. Hassan"
                   fill
                   sizes="(min-width: 768px) 144px, 112px"
-                  className="object-cover"
+                  className="object-cover transition-[filter] duration-300 dark:brightness-90 dark:contrast-105 dark:saturate-95"
                   priority
                 />
+                <div aria-hidden className="pointer-events-none absolute inset-0 hidden dark:block bg-gradient-to-t from-background/40 via-transparent to-transparent mix-blend-multiply" />
               </div>
             </div>
 
