@@ -1,6 +1,6 @@
 ---
 title: "Amazing Architecture"
-description: "A global architecture publication with a custom-built CMS — designed and developed end-to-end."
+description: "International architecture publication. Solo build — public site and the custom CMS the editors use every day."
 date: "2022-01-15"
 tech:
   - Laravel
@@ -12,25 +12,8 @@ thumbnail: /images/projects/amazing-architecture.png
 featured: true
 ---
 
-## Overview
+[Amazing Architecture](https://amazingarchitecture.com) is an international publication covering contemporary architecture — studios, projects, products. I designed and built the whole platform: the public site and the Laravel-based CMS the editorial team uses every day.
 
-[Amazing Architecture](https://amazingarchitecture.com) is an international publication showcasing contemporary architecture projects, studios, and products from around the world. I designed and developed the entire platform end-to-end — from visual design through the custom content management system that powers daily editorial publishing.
+Off-the-shelf CMS tools couldn't handle what they needed — image-heavy project pages, multiple authors, taxonomy across studios, architects, countries and project types, and pages that had to stay fast when a feature went viral. So I built one.
 
-## The problem
-
-Off-the-shelf CMS platforms couldn't handle the editorial team's workflow: rich media-heavy project pages, multi-author contributions, taxonomy across architects, studios, countries, and categories, and fast page loads under heavy traffic spikes when featured stories went viral.
-
-## What I built
-
-- **Custom CMS (Laravel + Vue.js SPA admin):** purpose-built editor for architecture articles with image galleries, embedded media, rich metadata, drag-and-drop ordering, and a taxonomy system for studios, architects, locations, and project types.
-- **Public website:** responsive front-end optimized for image-heavy editorial content, server-rendered for SEO, with category, studio, and search browsing.
-- **Performance layer:** Redis caching for hot article pages, rendered fragments, and taxonomy queries — keeping response times low even during traffic surges.
-- **Media pipeline:** uploads, resizing, and CDN-ready delivery for high-resolution architectural photography.
-
-## Role
-
-Sole designer and developer — UI design, database modeling, backend architecture, front-end implementation, deployment, and ongoing maintenance.
-
-## Stack
-
-**Backend:** Laravel, MySQL, Redis  ·  **Frontend:** Vue.js  ·  **Infra:** CDN-backed media delivery, Redis-cached rendering
+Redis caches the hot article pages and taxonomy lookups; the media pipeline handles high-res photography from upload through CDN delivery. Solo project — design, database, backend, frontend, deploy, and the maintenance that followed.

@@ -1,4 +1,5 @@
 import type { Project, Locale } from "@/lib/types";
+import TechIcons from "./TechIcons";
 import Link from "next/link";
 
 export default function ProjectCard({ project, locale, basePath = "projects" }: { project: Project; locale: Locale; basePath?: string }) {
@@ -27,17 +28,8 @@ export default function ProjectCard({ project, locale, basePath = "projects" }: 
           <p className="text-sm text-foreground/70 font-medium line-clamp-2 min-h-[40px] leading-snug">
             {frontmatter.description || "A comprehensive project overview showcasing full-stack capabilities."}
           </p>
-          <div className="flex gap-2 flex-wrap mt-3 pt-3 border-t border-border/40">
-            {frontmatter.tech.slice(0, 3).map((t) => (
-              <span key={t} className="font-semibold text-[11px] tracking-wide text-muted-foreground px-2 py-0.5 rounded-md bg-muted/60">
-                {t}
-              </span>
-            ))}
-            {frontmatter.tech.length > 3 && (
-              <span className="font-semibold text-[11px] tracking-wide text-muted-foreground px-2 py-0.5 rounded-md bg-muted/60">
-                +{frontmatter.tech.length - 3}
-              </span>
-            )}
+          <div className="mt-3 pt-3 border-t border-border/40">
+            <TechIcons items={frontmatter.tech} size="sm" max={4} />
           </div>
         </div>
       </div>

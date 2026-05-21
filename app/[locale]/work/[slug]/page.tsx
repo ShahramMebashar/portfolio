@@ -4,6 +4,7 @@ import type { Locale, ProjectFrontmatter } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
 import { getProjectSource } from "@/lib/content";
 import { renderMDX } from "@/lib/mdx";
+import TechIcons from "@/app/components/TechIcons";
 import Link from "next/link";
 
 export default async function WorkDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
@@ -25,13 +26,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ loc
         <article>
           <header className="mb-12 animate-reveal">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6 leading-tight">{frontmatter.title}</h1>
-            <div className="flex gap-3 flex-wrap">
-              {frontmatter.tech.map((t) => (
-                <span key={t} className="font-semibold text-xs tracking-wide text-foreground px-3 py-1 bg-muted/50 rounded-md border border-border/50">
-                  {t}
-                </span>
-              ))}
-            </div>
+            <TechIcons items={frontmatter.tech} size="md" />
           </header>
           <div className="prose animate-reveal delay-1 w-full max-w-none text-lg">
             {content}

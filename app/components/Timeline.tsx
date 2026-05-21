@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import TechIcons from "./TechIcons";
 
 interface TimelineEntry {
   company: string;
@@ -31,11 +31,7 @@ export default function Timeline({ entries }: TimelineProps) {
           <ul className="mb-3 ps-5 text-sm text-muted-foreground leading-relaxed">
             {entry.achievements.map((a, j) => (<li key={j} className="mb-1">{a}</li>))}
           </ul>
-          <div className="flex gap-1.5 flex-wrap">
-            {entry.tech.map((t) => (
-              <Badge key={t} variant="outline" className="font-mono text-xs">{t}</Badge>
-            ))}
-          </div>
+          <TechIcons items={entry.tech} size="sm" />
         </div>
       ))}
     </div>
