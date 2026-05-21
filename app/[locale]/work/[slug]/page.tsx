@@ -4,7 +4,7 @@ import type { Locale, ProjectFrontmatter } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
 import { getProjectSource } from "@/lib/content";
 import { renderMDX } from "@/lib/mdx";
-import { ViewTransitionLink } from "@/app/components/ViewTransitionLink";
+import Link from "next/link";
 
 export default async function WorkDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
@@ -19,9 +19,9 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ loc
   return (
     <div className="layout pt-32 pb-24 md:pt-40 min-h-screen">
       <div className="max-w-4xl mx-auto">
-        <ViewTransitionLink href={`/${locale}/work`} className="inline-flex items-center gap-2 text-sm text-muted-foreground font-semibold hover:text-foreground transition-colors mb-12">
+        <Link href={`/${locale}/work`} className="inline-flex items-center gap-2 text-sm text-muted-foreground font-semibold hover:text-foreground transition-colors mb-12">
           ← {dict.common.back}
-        </ViewTransitionLink>
+        </Link>
         <article>
           <header className="mb-12 animate-reveal">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6 leading-tight">{frontmatter.title}</h1>

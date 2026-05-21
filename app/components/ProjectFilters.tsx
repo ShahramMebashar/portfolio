@@ -21,17 +21,9 @@ export default function ProjectFilters({ categories, labels }: ProjectFiltersPro
     const params = new URLSearchParams(searchParams.toString());
     if (value === "all" || value === "") { params.delete(key); } else { params.set(key, value); }
     
-    if (document.startViewTransition) {
-      document.startViewTransition(() => {
-        startTransition(() => {
-          router.push(`${pathname}?${params.toString()}`);
-        });
-      });
-    } else {
-      startTransition(() => {
-        router.push(`${pathname}?${params.toString()}`);
-      });
-    }
+    startTransition(() => {
+      router.push(`${pathname}?${params.toString()}`);
+    });
   }
 
   const categoryLabels: Record<string, string> = { all: labels.all, fullstack: labels.fullstack, backend: labels.backend, frontend: labels.frontend };

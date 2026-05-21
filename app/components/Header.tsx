@@ -7,7 +7,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import type { Locale } from "@/lib/types";
 import type { Dictionary } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import { ViewTransitionLink } from "./ViewTransitionLink";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 interface HeaderProps {
@@ -48,19 +48,19 @@ export default function Header({ locale, dict }: HeaderProps) {
       )}>
         <header className="flex items-center justify-between w-full max-w-5xl mx-auto px-6 md:px-12 py-4">
           {/* Logo */}
-          <ViewTransitionLink
+          <Link
             href={`/${locale}`}
             className="font-mono text-sm font-bold tracking-tight text-foreground no-underline hover:text-primary transition-colors"
           >
             &lt;shahram /&gt;
-          </ViewTransitionLink>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
-                <ViewTransitionLink
+                <Link
                   key={item.href}
                   href={item.href}
                   className={cn(
@@ -71,7 +71,7 @@ export default function Header({ locale, dict }: HeaderProps) {
                   )}
                 >
                   {item.label}
-                </ViewTransitionLink>
+                </Link>
               );
             })}
 
@@ -112,7 +112,7 @@ export default function Header({ locale, dict }: HeaderProps) {
             {navItems.map((item, i) => {
               const isActive = pathname === item.href;
               return (
-                <ViewTransitionLink
+                <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
@@ -126,7 +126,7 @@ export default function Header({ locale, dict }: HeaderProps) {
                   style={{ transitionDelay: isOpen ? `${150 + i * 60}ms` : "0ms" }}
                 >
                   {item.label}
-                </ViewTransitionLink>
+                </Link>
               );
             })}
           </nav>
