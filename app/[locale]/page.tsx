@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { isLocale } from "@/lib/types";
 import type { Locale } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
-import { ViewTransitionLink } from "@/app/components/ViewTransitionLink";
+import Link from "next/link";
 import Image from "next/image";
 import CodeWidget from "@/app/components/CodeWidget";
 import TechStack from "@/app/components/TechStack";
@@ -69,16 +69,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </ul>
 
             <div className="flex items-center gap-4 pt-2">
-              <ViewTransitionLink href="mailto:hello@shaho.dev" className="group relative px-7 py-3 rounded-full bg-foreground text-background font-semibold overflow-hidden transition-all hover:scale-105 active:scale-95 text-sm shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] dark:shadow-[0_4px_14px_0_rgba(255,255,255,0.05)]">
+              <Link href="mailto:shahram.webdev@gmail.com" className="group relative px-7 py-3 rounded-full bg-foreground text-background font-semibold overflow-hidden transition-all hover:scale-105 active:scale-95 text-sm shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] dark:shadow-[0_4px_14px_0_rgba(255,255,255,0.05)]">
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary/50 to-blue-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 <span className="relative flex items-center justify-center">
                   {dict.home.btn_contact}
                   <svg className="ms-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 rtl:-scale-x-100 rtl:group-hover:-translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </span>
-              </ViewTransitionLink>
-              <ViewTransitionLink href={`/${locale}/about`} className="px-7 py-3 rounded-full bg-transparent text-foreground border border-border/80 font-semibold transition-all hover:bg-muted/50 hover:border-foreground/20 text-sm">
+              </Link>
+              <Link href={`/${locale}/about`} className="px-7 py-3 rounded-full bg-transparent text-foreground border border-border/80 font-semibold transition-all hover:bg-muted/50 hover:border-foreground/20 text-sm">
                 {dict.home.btn_resume}
-              </ViewTransitionLink>
+              </Link>
             </div>
           </div>
 

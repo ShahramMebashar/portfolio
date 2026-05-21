@@ -3,7 +3,7 @@ import { isLocale } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
 import { getAllPosts, getAllTopics } from "@/lib/content";
 import BlogCard from "@/app/components/BlogCard";
-import { ViewTransitionLink } from "@/app/components/ViewTransitionLink";
+import Link from "next/link";
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -22,13 +22,13 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           </h1>
         </section>
         <div className="flex gap-4 mb-16 flex-wrap animate-reveal delay-1">
-          <ViewTransitionLink href="/ku/blog" className="inline-flex items-center px-4 py-2 bg-foreground text-background rounded-md font-semibold text-sm no-underline shadow-sm transition-transform hover:scale-105 active:scale-95">
+          <Link href="/ku/blog" className="inline-flex items-center px-4 py-2 bg-foreground text-background rounded-md font-semibold text-sm no-underline shadow-sm transition-transform hover:scale-105 active:scale-95">
             {dict.blog.all_posts}
-          </ViewTransitionLink>
+          </Link>
           {topics.map((topic) => (
-            <ViewTransitionLink key={topic} href={`/ku/blog/${topic}`} className="inline-flex items-center px-4 py-2 border border-border rounded-md font-semibold text-sm text-muted-foreground no-underline hover:border-foreground hover:text-foreground transition-all duration-300">
+            <Link key={topic} href={`/ku/blog/${topic}`} className="inline-flex items-center px-4 py-2 border border-border rounded-md font-semibold text-sm text-muted-foreground no-underline hover:border-foreground hover:text-foreground transition-all duration-300">
               {topic}
-            </ViewTransitionLink>
+            </Link>
           ))}
         </div>
         <div className="flex flex-col gap-12 animate-reveal delay-2">

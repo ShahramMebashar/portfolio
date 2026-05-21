@@ -4,7 +4,7 @@ import type { BlogFrontmatter, Topic } from "@/lib/types";
 import { getPostSource, getPostsByTopic } from "@/lib/content";
 import { renderMDX } from "@/lib/mdx";
 import TableOfContents from "@/app/components/TableOfContents";
-import { ViewTransitionLink } from "@/app/components/ViewTransitionLink";
+import Link from "next/link";
 
 export default async function BlogPostPage({ params }: { params: Promise<{ locale: string; topic: string; slug: string }> }) {
   const { locale, topic, slug } = await params;
@@ -24,9 +24,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
   return (
     <div className="layout pt-32 pb-24 md:pt-40 min-h-screen">
       <div className="max-w-4xl mx-auto">
-        <ViewTransitionLink href={`/ku/blog/${topic}`} className="inline-flex items-center gap-2 text-sm text-muted-foreground font-semibold hover:text-foreground transition-colors mb-12 animate-reveal">
+        <Link href={`/ku/blog/${topic}`} className="inline-flex items-center gap-2 text-sm text-muted-foreground font-semibold hover:text-foreground transition-colors mb-12 animate-reveal">
           ← {topic}
-        </ViewTransitionLink>
+        </Link>
         <article className="animate-reveal delay-1">
           <header className="mb-12">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight">{frontmatter.title}</h1>
@@ -52,16 +52,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
         
         <nav className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 text-sm font-semibold animate-reveal delay-2">
           {prevPost ? (
-            <ViewTransitionLink href={`/ku/blog/${prevPost.topic}/${prevPost.slug}`} className="flex flex-col gap-1 text-muted-foreground no-underline hover:text-foreground transition-colors max-w-[200px]">
+            <Link href={`/ku/blog/${prevPost.topic}/${prevPost.slug}`} className="flex flex-col gap-1 text-muted-foreground no-underline hover:text-foreground transition-colors max-w-[200px]">
               <span className="text-xs uppercase tracking-widest text-muted-foreground/60">Previous</span>
               <span className="truncate">{prevPost.frontmatter.title}</span>
-            </ViewTransitionLink>
+            </Link>
           ) : <span />}
           {nextPost ? (
-            <ViewTransitionLink href={`/ku/blog/${nextPost.topic}/${nextPost.slug}`} className="flex flex-col gap-1 text-muted-foreground no-underline hover:text-foreground transition-colors max-w-[200px] sm:text-end">
+            <Link href={`/ku/blog/${nextPost.topic}/${nextPost.slug}`} className="flex flex-col gap-1 text-muted-foreground no-underline hover:text-foreground transition-colors max-w-[200px] sm:text-end">
               <span className="text-xs uppercase tracking-widest text-muted-foreground/60">Next</span>
               <span className="truncate">{nextPost.frontmatter.title}</span>
-            </ViewTransitionLink>
+            </Link>
           ) : <span />}
         </nav>
       </div>

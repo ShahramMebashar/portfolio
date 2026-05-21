@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Noto_Sans_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 import { isLocale } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
 import Header from "@/app/components/Header";
@@ -54,6 +55,7 @@ export default async function LocaleLayout({
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
