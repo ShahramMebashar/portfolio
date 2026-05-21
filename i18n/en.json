@@ -31,7 +31,11 @@
     "section_tools": "Tools"
   },
   "work": {
-    "title": "Work"
+    "title": "Work",
+    "meta_role": "Role",
+    "meta_year": "Year",
+    "meta_live": "Live",
+    "built_with": "Built with"
   },
   "projects": {
     "title": "Projects",

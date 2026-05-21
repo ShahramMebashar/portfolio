@@ -4,7 +4,7 @@ import type { Locale, ProjectFrontmatter } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
 import { getProjectSource } from "@/lib/content";
 import { renderMDX } from "@/lib/mdx";
-import TechIcons from "@/app/components/TechIcons";
+import ProjectMeta from "@/app/components/ProjectMeta";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,8 +26,19 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ loc
         </Link>
         <article>
           <header className="mb-10 animate-reveal">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6 leading-tight">{frontmatter.title}</h1>
-            <TechIcons items={frontmatter.tech} size="md" />
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-8 leading-tight">{frontmatter.title}</h1>
+            <ProjectMeta
+              role={frontmatter.role}
+              year={frontmatter.year}
+              liveUrl={frontmatter.liveUrl}
+              tech={frontmatter.tech}
+              labels={{
+                role: dict.work.meta_role,
+                year: dict.work.meta_year,
+                live: dict.work.meta_live,
+                builtWith: dict.work.built_with,
+              }}
+            />
           </header>
           {frontmatter.thumbnail && (
             <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl border border-border/50 bg-muted/30 mb-12 animate-reveal delay-1">

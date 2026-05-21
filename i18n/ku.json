@@ -46,7 +46,11 @@
     "title": "دەربارە"
   },
   "work": {
-    "title": "کارەکان"
+    "title": "کارەکان",
+    "meta_role": "ڕۆڵ",
+    "meta_year": "ساڵ",
+    "meta_live": "ماڵپەڕ",
+    "built_with": "دروستکراوە بە"
   },
   "experience": {
     "title": "ئەزموون"

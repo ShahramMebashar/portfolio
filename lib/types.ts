@@ -28,6 +28,9 @@ export type ProjectFrontmatter = {
   category: "fullstack" | "backend" | "frontend";
   thumbnail: string;
   featured: boolean;
+  role?: string;
+  year?: string;
+  liveUrl?: string;
 };
 
 export interface BlogPost {
