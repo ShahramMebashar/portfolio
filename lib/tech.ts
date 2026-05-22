@@ -2,6 +2,7 @@ import {
   SiGo, SiPhp, SiJavascript, SiTypescript, SiDart, SiHtml5, SiCss,
   SiLaravel, SiReact, SiVuedotjs, SiFlutter, SiNextdotjs, SiTailwindcss,
   SiPostgresql, SiMysql, SiRedis, SiDocker, SiGit, SiLinux, SiNginx, SiInertia,
+  SiSupabase,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
 import { TanStackIcon } from "./customTechIcons";
@@ -30,6 +31,7 @@ const registry: Record<string, Omit<TechMeta, "key">> = {
   next:       { Icon: SiNextdotjs,   name: "Next.js",    color: "#888888" },
   tanstack:   { Icon: TanStackIcon,  name: "TanStack Start", color: "#FF4154" },
   tailwind:   { Icon: SiTailwindcss, name: "Tailwind",   color: "#06B6D4" },
+  supabase:   { Icon: SiSupabase,    name: "Supabase",   color: "#3FCF8E" },
   postgresql: { Icon: SiPostgresql,  name: "PostgreSQL", color: "#4169E1" },
   mysql:      { Icon: SiMysql,       name: "MySQL",      color: "#4479A1" },
   redis:      { Icon: SiRedis,       name: "Redis",      color: "#FF4438" },
