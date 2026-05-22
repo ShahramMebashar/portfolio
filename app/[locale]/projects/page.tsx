@@ -3,7 +3,14 @@ import { isLocale } from "@/lib/types";
 import type { Locale } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
 
-const sideProjects = [
+const sideProjects: { name: string; description: string; tech: string[]; github: string; docs?: string }[] = [
+  {
+    name: "ParaKit (پارەکیت)",
+    description: "Laravel-native payment kit for Kurdistan & Iraq — FIB, ZainCash, Nass Pay/Wallet, FastPay, QiCard. Idempotent webhooks, retry & circuit-breaker, redacted logging, a sweeper for lost webhooks, and en/ar/ckb UIs out of the box.",
+    tech: ["Laravel", "PHP", "Payments"],
+    github: "https://github.com/ShahramMebashar/parakit",
+    docs: "https://shahrammebashar.github.io/parakit/",
+  },
   {
     name: "GoPoke",
     description: "A desktop app for running and iterating on Go snippets quickly — Tinkerwell for Go. Write Go code against a real local project, run it instantly, and see output in real time.",
@@ -46,13 +53,15 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
         </section>
         <ul className="space-y-0 animate-reveal delay-1">
           {sideProjects.map((project, i) => (
-            <li key={i} className="group border-b border-border/40 py-6 first:border-t">
+            <li key={i} className="group relative border-b border-border/40 py-6 first:border-t">
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start justify-between gap-6 no-underline"
-              >
+                aria-label={project.name}
+                className="absolute inset-0 z-0"
+              />
+              <div className="flex items-start justify-between gap-6">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-3 mb-2">
                     <h2 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
@@ -69,6 +78,16 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {project.description}
                   </p>
+                  {project.docs && (
+                    <a
+                      href={project.docs}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative z-10 mt-2 inline-block font-mono text-xs text-primary hover:underline"
+                    >
+                      Documentation ↗
+                    </a>
+                  )}
                 </div>
                 <svg
                   className="shrink-0 mt-0.5 size-4 text-muted-foreground/40 group-hover:text-primary transition-colors rtl:-scale-x-100"
@@ -78,7 +97,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-              </a>
+              </div>
             </li>
           ))}
         </ul>
