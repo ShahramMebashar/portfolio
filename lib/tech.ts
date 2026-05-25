@@ -5,7 +5,7 @@ import {
   SiSupabase, SiFirebase, SiLivewire,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
-import { TanStackIcon, S3Icon, WebSocketIcon } from "./customTechIcons";
+import { TanStackIcon, S3Icon, WebSocketIcon, Tile38Icon, PostgisIcon } from "./customTechIcons";
 
 export interface TechMeta {
   key: string;
@@ -34,6 +34,8 @@ const registry: Record<string, Omit<TechMeta, "key">> = {
   tailwind:   { Icon: SiTailwindcss, name: "Tailwind",   color: "#06B6D4" },
   supabase:   { Icon: SiSupabase,    name: "Supabase",   color: "#3FCF8E" },
   postgresql: { Icon: SiPostgresql,  name: "PostgreSQL", color: "#4169E1" },
+  postgis:    { Icon: PostgisIcon,   name: "PostGIS",    color: "#3B82F6" },
+  tile38:     { Icon: Tile38Icon,    name: "Tile38",     color: "#22A06B" },
   mysql:      { Icon: SiMysql,       name: "MySQL",      color: "#4479A1" },
   redis:      { Icon: SiRedis,       name: "Redis",      color: "#FF4438" },
   s3:         { Icon: S3Icon,        name: "Amazon S3",  color: "#569A31" },
@@ -60,8 +62,8 @@ const aliases: Record<string, string> = {
   "html5": "html",
   "css3": "css",
   "postgres": "postgresql",
-  "postgis": "postgresql",
   "tailwindcss": "tailwind",
+  "tile 38": "tile38",
   "amazon s3": "s3",
   "aws s3": "s3",
   "aws": "s3",

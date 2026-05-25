@@ -46,6 +46,49 @@ export const S3Icon: IconType = (props) => {
   );
 };
 
+// Tile38 (geospatial DB) has no brand glyph; a map pin conveys location/geo.
+export const Tile38Icon: IconType = (props) => {
+  const { size = 24, color = "currentColor", className, style, title } = props;
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+      style={style}
+      role="img"
+      aria-hidden={title ? undefined : true}
+    >
+      {title ? <title>{title}</title> : null}
+      <path d="M12 2c-3.87 0-7 3.13-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Z" fill={color} />
+      <circle cx="12" cy="9" r="2.6" fill="#fff" />
+    </svg>
+  );
+};
+
+// PostGIS has no brand glyph; a meridian globe conveys the spatial extension.
+export const PostgisIcon: IconType = (props) => {
+  const { size = 24, color = "currentColor", className, style, title } = props;
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+      style={style}
+      role="img"
+      aria-hidden={title ? undefined : true}
+    >
+      {title ? <title>{title}</title> : null}
+      <circle cx="12" cy="12" r="9" stroke={color} strokeWidth="1.8" />
+      <path d="M3 12h18" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M12 3c3.2 2.4 3.2 15.6 0 18M12 3c-3.2 2.4-3.2 15.6 0 18" stroke={color} strokeWidth="1.5" />
+    </svg>
+  );
+};
+
 // WebSocket has no brand glyph; bidirectional arrows convey the full-duplex connection.
 export const WebSocketIcon: IconType = (props) => {
   const { size = 24, color = "currentColor", className, style, title } = props;
