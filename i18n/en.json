@@ -42,7 +42,8 @@
     "filter_all": "All",
     "filter_fullstack": "Full Stack",
     "filter_backend": "Backend",
-    "filter_frontend": "Frontend"
+    "filter_frontend": "Frontend",
+    "filter_mobile": "Mobile"
   },
   "blog": {
     "title": "Blog",

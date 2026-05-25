@@ -35,7 +35,8 @@
     "filter_all": "هەموو",
     "filter_fullstack": "Full-Stack",
     "filter_backend": "باکێند",
-    "filter_frontend": "فرۆنتێند"
+    "filter_frontend": "فرۆنتێند",
+    "filter_mobile": "مۆبایل"
   },
   "blog": {
     "title": "بلۆگ",

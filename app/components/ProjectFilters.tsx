@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 interface ProjectFiltersProps {
   categories: string[];
   techTags: string[];
-  labels: { all: string; fullstack: string; backend: string; frontend: string };
+  labels: { all: string; fullstack: string; backend: string; frontend: string; mobile: string };
 }
 
 export default function ProjectFilters({ categories, labels }: ProjectFiltersProps) {
@@ -26,7 +26,7 @@ export default function ProjectFilters({ categories, labels }: ProjectFiltersPro
     });
   }
 
-  const categoryLabels: Record<string, string> = { all: labels.all, fullstack: labels.fullstack, backend: labels.backend, frontend: labels.frontend };
+  const categoryLabels: Record<string, string> = { all: labels.all, fullstack: labels.fullstack, backend: labels.backend, frontend: labels.frontend, mobile: labels.mobile };
 
   return (
     <div className="flex gap-4 flex-wrap mb-12">
