@@ -47,13 +47,17 @@ export default async function LocaleLayout({
       <body suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {/* Architectural Background Lines */}
-          <div className="fixed inset-0 pointer-events-none z-[-1] flex justify-center w-full">
+          <div className="fixed inset-0 pointer-events-none z-[-1] flex justify-center w-full print:hidden">
             <div className="w-full max-w-5xl h-full border-x border-border/40"></div>
           </div>
 
-          <Header locale={locale} dict={dict} />
+          <div className="print:hidden">
+            <Header locale={locale} dict={dict} />
+          </div>
           <main>{children}</main>
-          <Footer />
+          <div className="print:hidden">
+            <Footer />
+          </div>
         </ThemeProvider>
         <Analytics />
       </body>

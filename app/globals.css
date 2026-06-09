@@ -292,3 +292,33 @@
 .prose blockquote {
   @apply border-s-2 border-foreground ps-6 text-foreground/70 my-10 font-serif italic text-xl;
 }
+
+/* ===== Print / Save-as-PDF (CV page) ===== */
+@media print {
+  /* Site chrome (header/nav, footer, background lines) is marked print:hidden
+     in the layout, so only the CV document prints. */
+  #cv-root {
+    /* Force a clean light palette regardless of theme */
+    --background: #ffffff;
+    --foreground: #000000;
+    --primary: #000000;
+    --primary-foreground: #ffffff;
+    --muted-foreground: #3f3f3f;
+    --muted: #f2f2f2;
+    --border: #cfcfcf;
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Tech icons render greyed/dim on screen — restore full colour for print */
+  #cv-root svg {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  /* Keep entries from splitting across pages */
+  .cv-break-avoid { break-inside: avoid; }
+
+  @page { margin: 1.4cm; }
+}

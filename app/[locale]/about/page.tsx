@@ -5,6 +5,8 @@ import { getDictionary } from "@/lib/i18n";
 import { getContentSource } from "@/lib/content";
 import { renderMDX } from "@/lib/mdx";
 import GitHubCalendar from "@/app/components/GitHubCalendar";
+import Link from "next/link";
+import { FaFileLines } from "react-icons/fa6";
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -23,6 +25,13 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <h1 className="text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] tracking-tight font-extrabold text-foreground">
             {dict.about.title}
           </h1>
+          <Link
+            href={`/${locale}/cv`}
+            className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold no-underline transition-all hover:scale-105 active:scale-95"
+          >
+            <FaFileLines className="w-4 h-4" />
+            {dict.about.view_cv}
+          </Link>
         </section>
         <article className="prose animate-reveal delay-1 w-full max-w-none text-lg">
           {content}

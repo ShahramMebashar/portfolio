@@ -51,7 +51,8 @@
     "all_posts": "All Posts"
   },
   "about": {
-    "title": "About"
+    "title": "About",
+    "view_cv": "View CV"
   },
   "experience": {
     "title": "Experience"
