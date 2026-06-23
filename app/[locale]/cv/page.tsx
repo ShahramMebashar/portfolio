@@ -68,7 +68,7 @@ const EDUCATION = [
 const LANGUAGES = [
   { name: "Kurdish", level: "Native" },
   { name: "English", level: "Professional" },
-  { name: "Arabic", level: "Professional" },
+  { name: "Persian", level: "Good" },
 ];
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
