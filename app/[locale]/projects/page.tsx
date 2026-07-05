@@ -12,6 +12,18 @@ const sideProjects: { name: string; description: string; tech: string[]; github:
     docs: "https://shahrammebashar.github.io/parakit/",
   },
   {
+    name: "Cairn",
+    description: "A cross-platform desktop app that keeps task management inside the repo. Tasks are plain Markdown files tracked in git, so you and your AI agents work from one shared task graph — no database, no separate tool. Also runs as a web board or an MCP server.",
+    tech: ["Go", "Desktop", "MCP"],
+    github: "https://github.com/ShahramMebashar/cairn",
+  },
+  {
+    name: "debugd",
+    description: "An always-on request profiler for Laravel you can actually leave running. A small Go binary sits next to your app and captures every request — SQL queries, N+1s, logs, timings, memory — in a live UI, with no database or Docker to set up.",
+    tech: ["Go", "Laravel", "Desktop"],
+    github: "https://github.com/ShahramMebashar/debugd",
+  },
+  {
     name: "GoPoke",
     description: "A desktop app for running and iterating on Go snippets quickly — Tinkerwell for Go. Write Go code against a real local project, run it instantly, and see output in real time.",
     tech: ["Go", "Desktop"],
