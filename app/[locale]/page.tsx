@@ -26,11 +26,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/30 to-blue-500/30 rounded-[22px] blur-sm group-hover:blur-md transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
               <div className="w-28 h-28 md:w-36 md:h-36 rounded-[22px] bg-muted/40 border border-border/60 overflow-hidden relative shadow-sm transition-transform duration-500 group-hover:scale-105 z-10">
                 <Image
-                  src="https://cdn.resume.krd/author/shahram_avatar.jpg"
+                  src="/images/shahram_avatar.webp"
                   alt="Shahram M. Hassan"
                   fill
                   sizes="(min-width: 768px) 144px, 112px"
-                  className="object-cover transition-[filter] duration-300 dark:brightness-90 dark:contrast-105 dark:saturate-95"
+                  className="object-cover object-top transition-[filter] duration-300 dark:brightness-90 dark:contrast-105 dark:saturate-95"
                   priority
                 />
                 <div aria-hidden className="pointer-events-none absolute inset-0 hidden dark:block bg-gradient-to-t from-background/40 via-transparent to-transparent mix-blend-multiply" />
