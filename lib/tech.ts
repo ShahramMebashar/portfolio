@@ -2,7 +2,7 @@ import {
   SiGo, SiPhp, SiJavascript, SiTypescript, SiDart, SiHtml5, SiCss,
   SiLaravel, SiReact, SiVuedotjs, SiFlutter, SiNextdotjs, SiTailwindcss,
   SiPostgresql, SiMysql, SiRedis, SiDocker, SiGit, SiLinux, SiNginx, SiInertia,
-  SiSupabase, SiFirebase, SiLivewire,
+  SiSupabase, SiFirebase, SiLivewire, SiSwift, SiSqlite,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
 import { TanStackIcon, S3Icon, WebSocketIcon, Tile38Icon, PostgisIcon } from "./customTechIcons";
@@ -20,6 +20,7 @@ const registry: Record<string, Omit<TechMeta, "key">> = {
   javascript: { Icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
   typescript: { Icon: SiTypescript, name: "TypeScript", color: "#3178C6" },
   dart:       { Icon: SiDart,       name: "Dart",       color: "#0175C2" },
+  swift:      { Icon: SiSwift,      name: "Swift",      color: "#F05138" },
   html:       { Icon: SiHtml5,      name: "HTML",       color: "#E34F26" },
   css:        { Icon: SiCss,        name: "CSS",        color: "#1572B6" },
 
@@ -37,6 +38,7 @@ const registry: Record<string, Omit<TechMeta, "key">> = {
   postgis:    { Icon: PostgisIcon,   name: "PostGIS",    color: "#3B82F6" },
   tile38:     { Icon: Tile38Icon,    name: "Tile38",     color: "#22A06B" },
   mysql:      { Icon: SiMysql,       name: "MySQL",      color: "#4479A1" },
+  sqlite:     { Icon: SiSqlite,      name: "SQLite",     color: "#003B57" },
   redis:      { Icon: SiRedis,       name: "Redis",      color: "#FF4438" },
   s3:         { Icon: S3Icon,        name: "Amazon S3",  color: "#569A31" },
   firebase:   { Icon: SiFirebase,    name: "Firebase",   color: "#DD2C00" },
@@ -62,6 +64,7 @@ const aliases: Record<string, string> = {
   "html5": "html",
   "css3": "css",
   "postgres": "postgresql",
+  "sqlite3": "sqlite",
   "tailwindcss": "tailwind",
   "tile 38": "tile38",
   "amazon s3": "s3",
@@ -83,8 +86,8 @@ export function getTechMeta(name: string): TechMeta | undefined {
   return hit ? { key, ...hit } : undefined;
 }
 
-export const LANGUAGE_KEYS = ["go", "php", "javascript", "typescript", "dart", "html", "css"] as const;
-export const TOOL_KEYS = ["laravel", "react", "vue", "flutter", "next", "tailwind", "postgresql", "mysql", "redis", "docker", "git", "linux", "nginx"] as const;
+export const LANGUAGE_KEYS = ["go", "php", "javascript", "typescript", "swift", "dart", "html", "css"] as const;
+export const TOOL_KEYS = ["laravel", "react", "vue", "flutter", "next", "tailwind", "postgresql", "mysql", "sqlite", "redis", "docker", "git", "linux", "nginx"] as const;
 
 export function getTechByKeys(keys: readonly string[]): TechMeta[] {
   return keys.map((k) => ({ key: k, ...registry[k] }));

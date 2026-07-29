@@ -1,10 +1,13 @@
 import { FiUser, FiCalendar, FiExternalLink } from "react-icons/fi";
+import { SiAppstore } from "react-icons/si";
 import TechIcons from "./TechIcons";
 
 interface Labels {
   role: string;
   year: string;
   live: string;
+  appStore: string;
+  download: string;
   builtWith: string;
 }
 
@@ -12,6 +15,7 @@ interface Props {
   role?: string;
   year?: string;
   liveUrl?: string;
+  appStoreUrl?: string;
   tech: string[];
   labels: Labels;
 }
@@ -44,9 +48,9 @@ function MetaRow({ icon: Icon, label, value, href }: {
   );
 }
 
-export default function ProjectMeta({ role, year, liveUrl, tech, labels }: Props) {
+export default function ProjectMeta({ role, year, liveUrl, appStoreUrl, tech, labels }: Props) {
   const hostname = liveUrl ? new URL(liveUrl).hostname.replace(/^www\./, "") : undefined;
-  const hasMeta = role || year || liveUrl;
+  const hasMeta = role || year || liveUrl || appStoreUrl;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-12 p-6 md:p-7 rounded-2xl border border-border/50 bg-muted/20">
@@ -55,6 +59,7 @@ export default function ProjectMeta({ role, year, liveUrl, tech, labels }: Props
           {role && <MetaRow icon={FiUser} label={labels.role} value={role} />}
           {year && <MetaRow icon={FiCalendar} label={labels.year} value={year} />}
           {liveUrl && hostname && <MetaRow icon={FiExternalLink} label={labels.live} value={hostname} href={liveUrl} />}
+          {appStoreUrl && <MetaRow icon={SiAppstore} label={labels.appStore} value={labels.download} href={appStoreUrl} />}
         </div>
       )}
       {tech.length > 0 && (

@@ -3,7 +3,13 @@ import { isLocale } from "@/lib/types";
 import type { Locale } from "@/lib/types";
 import { getDictionary } from "@/lib/i18n";
 
-const sideProjects: { name: string; description: string; tech: string[]; github: string; docs?: string }[] = [
+const sideProjects: { name: string; description: string; tech: string[]; github?: string; appStore?: string; docs?: string }[] = [
+  {
+    name: "Shot Done",
+    description: "An iOS app that turns the screenshot pile into an inbox you can clear. It pulls out the QR codes, links, phone numbers and dates you actually screenshotted for, sorts everything into a searchable library, and walks you through the backlog one at a time. All of it runs on device — no account, nothing uploaded. Solo: design, code, and release.",
+    tech: ["Swift", "SQLite", "iOS"],
+    appStore: "https://apps.apple.com/us/app/shot-done-screenshot-inbox/id6790685817",
+  },
   {
     name: "ParaKit (پارەکیت)",
     description: "Laravel-native payment kit for Kurdistan & Iraq — FIB, ZainCash, Nass Pay/Wallet, FastPay, QiCard. Idempotent webhooks, retry & circuit-breaker, redacted logging, a sweeper for lost webhooks, and en/ar/ckb UIs out of the box.",
@@ -64,10 +70,12 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
           </h1>
         </section>
         <ul className="space-y-0 animate-reveal delay-1">
-          {sideProjects.map((project, i) => (
+          {sideProjects.map((project, i) => {
+            const href = project.github ?? project.appStore;
+            return (
             <li key={i} className="group relative border-b border-border/40 py-6 first:border-t">
               <a
-                href={project.github}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={project.name}
@@ -90,16 +98,28 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {project.description}
                   </p>
-                  {project.docs && (
-                    <a
-                      href={project.docs}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative z-10 mt-2 inline-block font-mono text-xs text-primary hover:underline"
-                    >
-                      Documentation ↗
-                    </a>
-                  )}
+                  <div className="flex gap-4">
+                    {project.docs && (
+                      <a
+                        href={project.docs}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative z-10 mt-2 inline-block font-mono text-xs text-primary hover:underline"
+                      >
+                        Documentation ↗
+                      </a>
+                    )}
+                    {project.appStore && project.appStore !== href && (
+                      <a
+                        href={project.appStore}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative z-10 mt-2 inline-block font-mono text-xs text-primary hover:underline"
+                      >
+                        App Store ↗
+                      </a>
+                    )}
+                  </div>
                 </div>
                 <svg
                   className="shrink-0 mt-0.5 size-4 text-muted-foreground/40 group-hover:text-primary transition-colors rtl:-scale-x-100"
@@ -111,7 +131,8 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
                 </svg>
               </div>
             </li>
-          ))}
+            );
+          })}
         </ul>
       </div>
     </div>

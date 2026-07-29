@@ -35,6 +35,8 @@
     "meta_role": "Role",
     "meta_year": "Year",
     "meta_live": "Live",
+    "meta_app_store": "App Store",
+    "meta_download": "Download",
     "built_with": "Built with"
   },
   "projects": {

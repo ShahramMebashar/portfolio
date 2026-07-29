@@ -46,9 +46,9 @@ const CONTACT = {
 };
 
 const SKILL_GROUPS = [
-  { label: "Languages", items: ["Go", "PHP", "JavaScript", "TypeScript", "Dart", "HTML", "CSS"] },
+  { label: "Languages", items: ["Go", "PHP", "JavaScript", "TypeScript", "Swift", "Dart", "HTML", "CSS"] },
   { label: "Frameworks & Libraries", items: ["Laravel", "React", "Vue.js", "Inertia.js", "Livewire", "Flutter", "Next.js", "TanStack Start", "Tailwind"] },
-  { label: "Data & Infrastructure", items: ["PostgreSQL", "PostGIS", "MySQL", "Redis", "Tile38", "Amazon S3", "Firebase", "Supabase", "WebSockets", "Docker", "Git", "Linux", "NGINX"] },
+  { label: "Data & Infrastructure", items: ["PostgreSQL", "PostGIS", "MySQL", "SQLite", "Redis", "Tile38", "Amazon S3", "Firebase", "Supabase", "WebSockets", "Docker", "Git", "Linux", "NGINX"] },
 ];
 
 const EDUCATION = [
@@ -182,7 +182,7 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
                 <div key={project.slug} className="cv-break-avoid">
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                     <h3 className="text-base font-semibold text-foreground">{fm.title}</h3>
-                    {fm.liveUrl && (
+                    {fm.liveUrl ? (
                       <a
                         href={fm.liveUrl}
                         target="_blank"
@@ -191,7 +191,16 @@ export default async function CVPage({ params }: { params: Promise<{ locale: str
                       >
                         {fm.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")} ↗
                       </a>
-                    )}
+                    ) : fm.appStoreUrl ? (
+                      <a
+                        href={fm.appStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-xs text-primary hover:underline"
+                      >
+                        App Store ↗
+                      </a>
+                    ) : null}
                   </div>
                   {fm.role && <div className="text-xs text-muted-foreground mt-0.5">{fm.role}</div>}
                   {fm.description && (

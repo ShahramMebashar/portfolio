@@ -25,12 +25,13 @@ export type ProjectFrontmatter = {
   description?: string;
   date: string;
   tech: string[];
-  category: "fullstack" | "backend" | "frontend";
+  category: "fullstack" | "backend" | "frontend" | "mobile";
   thumbnail: string;
   featured: boolean;
   role?: string;
   year?: string;
   liveUrl?: string;
+  appStoreUrl?: string;
 };
 
 export interface BlogPost {

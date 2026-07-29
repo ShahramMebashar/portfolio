@@ -31,11 +31,14 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ loc
               role={frontmatter.role}
               year={frontmatter.year}
               liveUrl={frontmatter.liveUrl}
+              appStoreUrl={frontmatter.appStoreUrl}
               tech={frontmatter.tech}
               labels={{
                 role: dict.work.meta_role,
                 year: dict.work.meta_year,
                 live: dict.work.meta_live,
+                appStore: dict.work.meta_app_store,
+                download: dict.work.meta_download,
                 builtWith: dict.work.built_with,
               }}
             />
