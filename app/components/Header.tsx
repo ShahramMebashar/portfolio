@@ -47,7 +47,11 @@ export default function Header({ locale, dict }: HeaderProps) {
           // Matches the architectural border-x lines in the root layout, so the bar
           // reads as part of the page column rather than a full-bleed strip.
           "w-full max-w-5xl mx-auto transition-all duration-300",
-          scrolled ? "bg-background/90 backdrop-blur-xl border-x border-b border-border/40 shadow-sm" : "bg-transparent"
+          // Bottom-only shadow: the y-offset pushes it down and the negative spread
+          // pulls it back inside the box, so nothing escapes past the top or sides.
+          scrolled
+            ? "bg-background/90 backdrop-blur-xl border-x border-b border-border/40 shadow-[0_8px_10px_-8px_rgba(0,0,0,0.12)]"
+            : "bg-transparent"
         )}>
         <header className="flex items-center justify-between px-6 md:px-12 py-4">
           {/* Logo */}

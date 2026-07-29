@@ -38,9 +38,10 @@ export default async function LocaleLayout({
 
   const dict = await getDictionary(locale);
   const dir = locale === "ku" ? "rtl" : "ltr";
-  const fontClass = locale === "ku"
-    ? `${notoSansArabic.variable} ${geistMono.variable}`
-    : `${geistSans.variable} ${geistMono.variable}`;
+  // All three families load on every locale. `:root[lang="ku"]` decides which one
+  // drives --font-sans-custom, but the Arabic face must exist on /en too so the
+  // language switcher can render کوردی in real type instead of an OS fallback.
+  const fontClass = `${geistSans.variable} ${geistMono.variable} ${notoSansArabic.variable}`;
 
   return (
     <html lang={locale} dir={dir} className={fontClass} suppressHydrationWarning>

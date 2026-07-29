@@ -75,6 +75,14 @@
   --font-sans-custom: var(--font-noto-arabic), var(--font-sans-fallback);
 }
 
+/* Arabic-script text rendered inside an otherwise Latin page (e.g. the language
+   switcher on /en). Never letter-space this — the script is cursive and tracking
+   breaks the joins between letters. */
+.font-arabic {
+  font-family: var(--font-noto-arabic), var(--font-sans-fallback);
+  letter-spacing: normal;
+}
+
 .dark {
   /* Minimalistic Premium Dark Theme (Absolute Black, Startup Sleek) */
   --background: oklch(0 0 0);
