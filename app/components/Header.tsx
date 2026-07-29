@@ -42,11 +42,14 @@ export default function Header({ locale, dict }: HeaderProps) {
   return (
     <>
       {/* Desktop + Mobile Top Bar */}
-      <div className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm" : "bg-transparent"
-      )}>
-        <header className="flex items-center justify-between w-full max-w-5xl mx-auto px-6 md:px-12 py-4">
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <div className={cn(
+          // Matches the architectural border-x lines in the root layout, so the bar
+          // reads as part of the page column rather than a full-bleed strip.
+          "w-full max-w-5xl mx-auto transition-all duration-300",
+          scrolled ? "bg-background/90 backdrop-blur-xl border-x border-b border-border/40 shadow-sm" : "bg-transparent"
+        )}>
+        <header className="flex items-center justify-between px-6 md:px-12 py-4">
           {/* Logo */}
           <Link
             href={`/${locale}`}
@@ -90,6 +93,7 @@ export default function Header({ locale, dict }: HeaderProps) {
             {isOpen ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </header>
+        </div>
       </div>
 
       {/* Mobile Fullscreen Menu */}

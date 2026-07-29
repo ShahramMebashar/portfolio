@@ -63,7 +63,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
 
   return (
     <div className="layout pt-32 pb-24 md:pt-40 min-h-screen">
-      <div className="animate-reveal max-w-3xl">
+      <div className="animate-reveal">
         <section className="mb-12 md:mb-16 py-0 flex flex-col items-start">
           <h1 className="text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] tracking-tight font-extrabold text-foreground">
             {dict.projects.title}
@@ -95,7 +95,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
                       ))}
                     </div>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl">
                     {project.description}
                   </p>
                   <div className="flex gap-4">
