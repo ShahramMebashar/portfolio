@@ -74,10 +74,10 @@ export default function CodeWidget() {
   const lines = tab === "code" ? goLines : logLines;
 
   return (
-    <div
-      dir="ltr"
-      className="w-full max-w-[600px] overflow-hidden rounded-2xl bg-[#1c202a] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.45)] ring-1 ring-black/10 dark:ring-white/10"
-    >
+    // No dir here: the shell must inherit the page direction so the logical
+    // rounding and the bleed margin flip on the Kurdish side. Only the code
+    // itself is pinned to LTR.
+    <div className="w-full overflow-hidden rounded-s-2xl bg-[#1c202a]">
       <div className="flex items-center gap-5 bg-[#030712] px-5 py-3.5">
         <div className="flex gap-2">
           <span className="size-3 rounded-full bg-[#353941]" />
@@ -101,8 +101,12 @@ export default function CodeWidget() {
         </div>
       </div>
 
-      <div className="overflow-x-auto px-5 py-5 text-left font-mono text-[12.5px] leading-[1.9]">
-        <Lines lines={lines} />
+      {/* Padding stays direction-aware (pe-10 clears the squared-off bleeding
+          edge); only the code inside is pinned to LTR. */}
+      <div className="overflow-x-auto py-5 ps-5 pe-10 font-mono text-[12.5px] leading-[1.9]">
+        <div dir="ltr" className="text-left">
+          <Lines lines={lines} />
+        </div>
       </div>
     </div>
   );

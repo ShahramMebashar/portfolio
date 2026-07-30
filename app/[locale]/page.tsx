@@ -82,8 +82,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </div>
           </div>
 
-          {/* RIGHT COLUMN: CODE WIDGET */}
-          <div className="hidden lg:flex items-center justify-center animate-reveal delay-2 select-none">
+          {/* RIGHT COLUMN: CODE WIDGET.
+              -me-12 cancels the .layout px-12 gutter so the widget runs out to
+              the architectural guide line and is cut flat there. Logical margin,
+              so it bleeds to the left instead on the RTL side. */}
+          <div className="hidden lg:flex items-center -me-12 animate-reveal delay-2 select-none">
             <CodeWidget />
           </div>
         </div>
