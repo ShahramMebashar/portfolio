@@ -87,9 +87,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             
             <div className="relative w-full max-w-[600px] h-full min-h-[550px] flex items-center justify-center perspective-[1000px]">
               
-              {/* Background gradient orb */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-full blur-[80px] opacity-60"></div>
-
               <CodeWidget />
 
               
