@@ -82,15 +82,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </div>
           </div>
 
-          {/* RIGHT COLUMN: UI COLLAGE */}
-          <div className="hidden lg:flex flex-col justify-center items-center relative animate-reveal delay-2 select-none">
-            
-            <div className="relative w-full max-w-[600px] h-full min-h-[550px] flex items-center justify-center perspective-[1000px]">
-              
-              <CodeWidget />
-
-              
-            </div>
+          {/* RIGHT COLUMN: CODE WIDGET */}
+          <div className="hidden lg:flex items-center justify-center animate-reveal delay-2 select-none">
+            <CodeWidget />
           </div>
         </div>
       </div>
