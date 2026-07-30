@@ -2,10 +2,10 @@ import {
   SiGo, SiPhp, SiJavascript, SiTypescript, SiDart, SiHtml5, SiCss,
   SiLaravel, SiReact, SiVuedotjs, SiFlutter, SiNextdotjs, SiTailwindcss,
   SiPostgresql, SiMysql, SiRedis, SiDocker, SiGit, SiLinux, SiNginx, SiInertia,
-  SiSupabase, SiFirebase, SiLivewire, SiSwift, SiSqlite,
+  SiSupabase, SiFirebase, SiLivewire, SiSwift, SiSqlite, SiPm2,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
-import { TanStackIcon, S3Icon, WebSocketIcon, Tile38Icon, PostgisIcon } from "./customTechIcons";
+import { TanStackIcon, S3Icon, WebSocketIcon, Tile38Icon, PostgisIcon, PgBouncerIcon } from "./customTechIcons";
 
 export interface TechMeta {
   key: string;
@@ -39,6 +39,7 @@ const registry: Record<string, Omit<TechMeta, "key">> = {
   tile38:     { Icon: Tile38Icon,    name: "Tile38",     color: "#22A06B" },
   mysql:      { Icon: SiMysql,       name: "MySQL",      color: "#4479A1" },
   sqlite:     { Icon: SiSqlite,      name: "SQLite",     color: "#003B57" },
+  pgbouncer:  { Icon: PgBouncerIcon, name: "PgBouncer",  color: "#4169E1" },
   redis:      { Icon: SiRedis,       name: "Redis",      color: "#FF4438" },
   s3:         { Icon: S3Icon,        name: "Amazon S3",  color: "#569A31" },
   firebase:   { Icon: SiFirebase,    name: "Firebase",   color: "#DD2C00" },
@@ -47,6 +48,7 @@ const registry: Record<string, Omit<TechMeta, "key">> = {
   git:        { Icon: SiGit,         name: "Git",        color: "#F05032" },
   linux:      { Icon: SiLinux,       name: "Linux",      color: "#FCC624" },
   nginx:      { Icon: SiNginx,       name: "NGINX",      color: "#009639" },
+  pm2:        { Icon: SiPm2,         name: "PM2",        color: "#2B037A" },
 };
 
 const aliases: Record<string, string> = {
@@ -65,6 +67,8 @@ const aliases: Record<string, string> = {
   "css3": "css",
   "postgres": "postgresql",
   "sqlite3": "sqlite",
+  "pg bouncer": "pgbouncer",
+  "pgbouncer": "pgbouncer",
   "tailwindcss": "tailwind",
   "tile 38": "tile38",
   "amazon s3": "s3",

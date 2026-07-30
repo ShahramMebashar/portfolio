@@ -89,6 +89,38 @@ export const PostgisIcon: IconType = (props) => {
   );
 };
 
+// PgBouncer has no brand glyph; many client lines funnelling into one pooled
+// connection is the thing it actually does.
+export const PgBouncerIcon: IconType = (props) => {
+  const { size = 24, color = "currentColor", className, style, title } = props;
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+      style={style}
+      role="img"
+      aria-hidden={title ? undefined : true}
+    >
+      {title ? <title>{title}</title> : null}
+      <circle cx="4" cy="5" r="1.7" fill={color} />
+      <circle cx="4" cy="12" r="1.7" fill={color} />
+      <circle cx="4" cy="19" r="1.7" fill={color} />
+      <path
+        d="M6 5c4 0 3.5 7 5.5 7M6 12h5.5M6 19c4 0 3.5-7 5.5-7"
+        stroke={color}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+      <rect x="12" y="8" width="3.4" height="8" rx="1.2" fill={color} />
+      <path d="M15.4 12H20" stroke={color} strokeWidth="1.7" strokeLinecap="round" />
+      <circle cx="21" cy="12" r="1.7" fill={color} />
+    </svg>
+  );
+};
+
 // WebSocket has no brand glyph; bidirectional arrows convey the full-duplex connection.
 export const WebSocketIcon: IconType = (props) => {
   const { size = 24, color = "currentColor", className, style, title } = props;
