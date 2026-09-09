@@ -5,6 +5,12 @@ import { getDictionary } from "@/lib/i18n";
 
 const sideProjects: { name: string; description: string; tech: string[]; github?: string; appStore?: string; docs?: string }[] = [
   {
+    name: "Kisa",
+    description: "A private expense tracker for iPhone. Budgets, recurring bills, receipt scanning with on-device OCR, insights, and widgets on one clean screen. Data stays in a local SQLite store and, optionally, your own private iCloud; couples can share individual accounts and settle up. Ships in English, Arabic, Spanish, and both Kurdish dialects. Solo: design, code, and release.",
+    tech: ["Swift", "SQLite", "CloudKit", "iOS"],
+    appStore: "https://apps.apple.com/us/app/kisa-expense-tracker/id6789903357",
+  },
+  {
     name: "Shot Done",
     description: "An iOS app that turns the screenshot pile into an inbox you can clear. It pulls out the QR codes, links, phone numbers and dates you actually screenshotted for, sorts everything into a searchable library, and walks you through the backlog one at a time. All of it runs on device — no account, nothing uploaded. Solo: design, code, and release.",
     tech: ["Swift", "SQLite", "iOS"],
