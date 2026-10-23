@@ -25,6 +25,8 @@ export default function Header({ locale, dict }: HeaderProps) {
     { href: `/${locale}/work`, label: dict.nav.work },
     { href: `/${locale}/projects`, label: dict.nav.projects },
     { href: `/${locale}/experience`, label: dict.nav.experience },
+    // Blog is English-only.
+    ...(locale === "en" ? [{ href: `/${locale}/blog`, label: dict.nav.blog }] : []),
     { href: `/${locale}/about`, label: dict.nav.about },
   ];
 

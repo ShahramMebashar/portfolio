@@ -1,0 +1,20 @@
+---
+title: "PHP Still Powers the Web. And It Still Ships."
+date: "2026-10-23"
+tags:
+  - php
+  - laravel
+  - security
+excerpt: "Two critical PHP CVEs landed this week, and the \"is PHP dead?\" posts came right behind them. Here's what I actually did about it."
+readingTime: 2
+---
+
+On October 21, AWS published a [security bulletin](https://aws.amazon.com/security/security-bulletins/2026-143-aws/) for two critical PHP issues, CVE-2026-109618 and CVE-2026-109619. An unauthenticated request to an affected PHP worker can run code on the server. Every branch from 8.2 to 8.5 was affected until the fixed releases: 8.2.35, 8.3.36, 8.4.27 and 8.5.12.
+
+The "is PHP still a good choice?" posts showed up a few hours later, like they always do.
+
+I build with Laravel, and I run it in production for clients. So when the bulletin dropped, I checked which PHP version each of my clients' apps was on and upgraded the affected ones to a patched release. Nothing dramatic about it. It's the boring part of the job, and it's the part that matters.
+
+The bulletin also says anything on PHP 8.1 or older gets no fix for one of the two CVEs. If you're still on an end-of-life version, this is the week to move.
+
+PHP isn't going anywhere. [W3Techs](https://w3techs.com/technologies/details/pl-php) puts it on roughly 70% of websites whose server-side language is known. It's not perfect, and I don't need it to be. It ships, and keeping it patched is on me.

@@ -24,10 +24,10 @@ export function proxy(request: NextRequest) {
   const firstSegment = pathnameSegments[1];
 
   if (isLocale(firstSegment)) {
-    // Redirect /en/blog* to /ku/blog* (blog is Kurdish-only)
-    if (firstSegment === "en" && pathnameSegments[2] === "blog") {
+    // Redirect /ku/blog* to /en/blog* (blog is English-only)
+    if (firstSegment === "ku" && pathnameSegments[2] === "blog") {
       const blogPath = pathnameSegments.slice(2).join("/");
-      request.nextUrl.pathname = `/ku/${blogPath}`;
+      request.nextUrl.pathname = `/en/${blogPath}`;
       return NextResponse.redirect(request.nextUrl);
     }
     return;

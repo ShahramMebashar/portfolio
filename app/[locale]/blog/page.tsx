@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  if (!isLocale(locale) || locale !== "ku") notFound();
+  if (!isLocale(locale) || locale !== "en") notFound();
 
   const dict = await getDictionary(locale);
   const posts = await getAllPosts();
@@ -22,11 +22,11 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
           </h1>
         </section>
         <div className="flex gap-4 mb-16 flex-wrap animate-reveal delay-1">
-          <Link href="/ku/blog" className="inline-flex items-center px-4 py-2 bg-foreground text-background rounded-md font-semibold text-sm no-underline shadow-sm transition-transform hover:scale-105 active:scale-95">
+          <Link href="/en/blog" className="inline-flex items-center px-4 py-2 bg-foreground text-background rounded-md font-semibold text-sm no-underline shadow-sm transition-transform hover:scale-105 active:scale-95">
             {dict.blog.all_posts}
           </Link>
           {topics.map((topic) => (
-            <Link key={topic} href={`/ku/blog/${topic}`} className="inline-flex items-center px-4 py-2 border border-border rounded-md font-semibold text-sm text-muted-foreground no-underline hover:border-foreground hover:text-foreground transition-all duration-300">
+            <Link key={topic} href={`/en/blog/${topic}`} className="inline-flex items-center px-4 py-2 border border-border rounded-md font-semibold text-sm text-muted-foreground no-underline hover:border-foreground hover:text-foreground transition-all duration-300">
               {topic}
             </Link>
           ))}

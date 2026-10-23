@@ -21,7 +21,7 @@ export default function TableOfContents() {
 
   return (
     <nav className="text-sm leading-relaxed">
-      <h4 className="font-mono text-xs text-muted-foreground mb-2">ناوەڕۆک</h4>
+      <h4 className="font-mono text-xs text-muted-foreground mb-2">On this page</h4>
       {headings.map((h) => (
         <a
           key={h.id}
